@@ -3,6 +3,7 @@
 #include<memory>
 #include<thread>
 #include"../UI/Display.h"
+#include"../Managers/IGXManager.h"
 
 namespace Fallout{
 	namespace Core{
@@ -27,6 +28,8 @@ namespace Fallout{
 			UI::DisplayPtr _display;
 			//Graphics API
 			GraphicsHandle _api;
+			//Graphics Manager
+			Managers::IGXManagerPtr _graphicsDevice;
 		};
 		typedef std::shared_ptr<FalloutEngine> FalloutEnginePtr;
 	}

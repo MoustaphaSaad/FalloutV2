@@ -19,6 +19,9 @@
     <Filter Include="Header Files\UI">
       <UniqueIdentifier>{6a357cc4-7143-4ac2-82a6-47143e37220e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Managers">
+      <UniqueIdentifier>{871f017b-2e30-4c79-be9f-d813a0add4cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -30,6 +33,9 @@
     <ClCompile Include="UI\Display.cpp">
       <Filter>Header Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="Managers\IGXManager.cpp">
+      <Filter>Header Files\Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\FalloutEngine.h">
@@ -37,6 +43,18 @@
     </ClInclude>
     <ClInclude Include="UI\Display.h">
       <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\FalloutCore.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\FalloutUI.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\FalloutManagers.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\IGXManager.h">
+      <Filter>Header Files\Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
