@@ -15,6 +15,10 @@ namespace Fallout{
 			bool init(UI::DisplayPtr display,GraphicsHandle type);
 			//will take an application 
 			void start();
+			//graphics device getter
+			Managers::IGXManagerPtr getGraphicsDevice();
+			//_joinable setter to decide whether to make thread joinable or not
+			void join(bool val);
 			//get instance
 			static std::shared_ptr<FalloutEngine> getInstance();
 		private:
@@ -30,6 +34,8 @@ namespace Fallout{
 			GraphicsHandle _api;
 			//Graphics Manager
 			Managers::IGXManagerPtr _graphicsDevice;
+			//bool to check if we'll join the thread or not
+			bool _joinable;
 		};
 		typedef std::shared_ptr<FalloutEngine> FalloutEnginePtr;
 	}

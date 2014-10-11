@@ -1,4 +1,6 @@
 #include"FalloutEngine.h"
+#include"../Managers/GLManager.h"
+#include"../Managers/DXManager.h"
 using namespace std;
 using namespace Fallout::Core;
 using namespace Fallout::UI;
@@ -10,11 +12,11 @@ FalloutEngine::FalloutEngine(){
 	_mainThread = NULL;
 	_display = nullptr;
 	_graphicsDevice = nullptr;
+	_joinable = false;
 }
 FalloutEngine::~FalloutEngine(){
-	cout << "detruct" << endl;
 	_instance = nullptr;
-	if (_mainThread)
+	if (_mainThread && !_joinable)
 		_mainThread->detach();
 	if (_display)
 		_display = nullptr;
@@ -31,19 +33,36 @@ FalloutEnginePtr FalloutEngine::getInstance(){
 }
 
 bool FalloutEngine::init(DisplayPtr display, GraphicsHandle type){
-	cout << "init" << endl;
 	_display = display;
 	_api = type;
 	if (_api == GraphicsHandle::OPENGL){
 		//initialize OpenGL device
+		_graphicsDevice = IGXManagerPtr(new GLManager());
+		_graphicsDevice->init(_display);
 	}
 	else if (_api == GraphicsHandle::DIRECTX){
 		//initialize DirectX device
+		_graphicsDevice = IGXManagerPtr(new DXManager());
+		_graphicsDevice->init(_display);
 	}
 	return true;
 }
 
 void FalloutEngine::start(){
-	cout << "start" << endl;
-	return;
+	//init thread
+	if (_api == GraphicsHandle::OPENGL)
+		_mainThread = new thread(&Fallout::Managers::GLManager::start,(GLManager*)_graphicsDevice.get());
+	else if (_api == GraphicsHandle::DIRECTX)
+		_mainThread = new thread(&Fallout::Managers::DXManager::start, (DXManager*)_graphicsDevice.get());
+	//join check
+	if (_mainThread && _joinable)
+		_mainThread->join();
+}
+
+IGXManagerPtr FalloutEngine::getGraphicsDevice(){
+	return _graphicsDevice;
+}
+
+void FalloutEngine::join(bool val){
+	_joinable = val;
 }

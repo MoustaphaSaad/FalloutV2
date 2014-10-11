@@ -41,10 +41,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(ProjectDir)\Managers;$(ProjectDir)\UI;$(ProjectDir)\Core;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(ProjectDir)\Libraries\glm\include;$(ProjectDir)\Libraries\freeglut\include;$(ProjectDir)\Libraries\glew-1.10.0\include;$(ProjectDir)\Managers;$(ProjectDir)\UI;$(ProjectDir)\Core;$(IncludePath)</IncludePath>
+    <LibraryPath>"C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86";$(ProjectDir)\Libraries\glew-1.10.0\lib\Release\Win32;$(ProjectDir)\Libraries\freeglut\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(ProjectDir)\Libraries\glm\include;$(ProjectDir)\Libraries\freeglut\include;$(ProjectDir)\Libraries\glew-1.10.0\include;$(ProjectDir)\Managers;$(ProjectDir)\UI;$(ProjectDir)\Core;$(IncludePath)</IncludePath>
+    <LibraryPath>"C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86";$(ProjectDir)\Libraries\glew-1.10.0\lib\Release\Win32;$(ProjectDir)\Libraries\freeglut\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -80,6 +83,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Core\FalloutEngine.cpp" />
+    <ClCompile Include="Managers\DXManager.cpp" />
+    <ClCompile Include="Managers\GLManager.cpp" />
     <ClCompile Include="Managers\IGXManager.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="UI\Display.cpp" />
@@ -87,7 +92,9 @@
   <ItemGroup>
     <ClInclude Include="Core\FalloutCore.h" />
     <ClInclude Include="Core\FalloutEngine.h" />
+    <ClInclude Include="Managers\DXManager.h" />
     <ClInclude Include="Managers\FalloutManagers.h" />
+    <ClInclude Include="Managers\GLManager.h" />
     <ClInclude Include="Managers\IGXManager.h" />
     <ClInclude Include="UI\Display.h" />
     <ClInclude Include="UI\FalloutUI.h" />

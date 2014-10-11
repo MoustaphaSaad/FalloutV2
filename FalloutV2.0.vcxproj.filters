@@ -36,6 +36,12 @@
     <ClCompile Include="Managers\IGXManager.cpp">
       <Filter>Header Files\Managers</Filter>
     </ClCompile>
+    <ClCompile Include="Managers\GLManager.cpp">
+      <Filter>Header Files\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\DXManager.cpp">
+      <Filter>Header Files\Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\FalloutEngine.h">
@@ -54,6 +60,12 @@
       <Filter>Header Files\Managers</Filter>
     </ClInclude>
     <ClInclude Include="Managers\IGXManager.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\GLManager.h">
+      <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\DXManager.h">
       <Filter>Header Files\Managers</Filter>
     </ClInclude>
   </ItemGroup>
