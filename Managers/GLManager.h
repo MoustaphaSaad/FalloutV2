@@ -6,6 +6,10 @@ namespace Fallout{
 		public:
 			GLManager();
 			~GLManager();
+			//static function to power glut
+			static void display();
+			static void reshape();
+			static void idle();
 			//overriding init function
 			bool init(UI::DisplayPtr display);
 			//overriding start function
