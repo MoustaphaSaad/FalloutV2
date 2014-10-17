@@ -12,18 +12,23 @@ namespace Fallout{
 		public: 
 			~FalloutEngine();
 			//init function takes display, Graphics handle
-			bool init(UI::DisplayPtr display,GraphicsHandle type);
-			//will take an application 
+			void setup(UI::DisplayPtr display,GraphicsHandle type);
+			//will take an application
 			void start();
 			//graphics device getter
 			Managers::IGXManagerPtr getGraphicsDevice();
 			//_joinable setter to decide whether to make thread joinable or not
 			void join(bool val);
+			//display getter
+			UI::DisplayPtr getDisplay();
 			//get instance
 			static std::shared_ptr<FalloutEngine> getInstance();
 		private:
 			//this is a private constructor
 			FalloutEngine();
+			//private init function for the thread to run, in winAPI Window is attached to the thread that made it
+			bool init();
+
 			//this is singelton pattern
 			static std::shared_ptr<FalloutEngine> _instance;
 			//working thread to init in start

@@ -32,31 +32,34 @@ FalloutEnginePtr FalloutEngine::getInstance(){
 	return _instance;
 }
 
-bool FalloutEngine::init(DisplayPtr display, GraphicsHandle type){
+void FalloutEngine::setup(DisplayPtr display, GraphicsHandle type){
 	_display = display;
 	_api = type;
 	if (_api == GraphicsHandle::OPENGL){
 		//initialize OpenGL device
 		_graphicsDevice = IGXManagerPtr(new GLManager());
-		_graphicsDevice->init(_display);
 	}
 	else if (_api == GraphicsHandle::DIRECTX){
 		//initialize DirectX device
 		_graphicsDevice = IGXManagerPtr(new DXManager());
-		_graphicsDevice->init(_display);
 	}
-	return true;
 }
-
+bool FalloutEngine::init(){
+	if (_graphicsDevice->init(_display))
+		_graphicsDevice->start();
+	else{
+		cerr << "Cannot init Engine ... exit" << endl;
+		exit(1);
+	}
+}
 void FalloutEngine::start(){
 	//init thread
-	if (_api == GraphicsHandle::OPENGL)
-		_mainThread = new thread(&Fallout::Managers::GLManager::start,(GLManager*)_graphicsDevice.get());
-	else if (_api == GraphicsHandle::DIRECTX)
-		_mainThread = new thread(&Fallout::Managers::DXManager::start, (DXManager*)_graphicsDevice.get());
+	if (_graphicsDevice != nullptr)
+		_mainThread = new thread(&FalloutEngine::init, this);
 	//join check
 	if (_mainThread && _joinable)
 		_mainThread->join();
+	//_graphicsDevice->start();
 }
 
 IGXManagerPtr FalloutEngine::getGraphicsDevice(){
@@ -65,4 +68,8 @@ IGXManagerPtr FalloutEngine::getGraphicsDevice(){
 
 void FalloutEngine::join(bool val){
 	_joinable = val;
+}
+
+DisplayPtr FalloutEngine::getDisplay(){
+	return _display;
 }

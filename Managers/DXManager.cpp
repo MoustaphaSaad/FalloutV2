@@ -1,9 +1,11 @@
 #include<iostream>
 #include"DXManager.h"
+#include"../Core/FalloutEngine.h"
 #include<D3D11.h>
 #include<D3DX11.h>
 #include<D3DX10.h>
 
+using namespace std;
 using namespace Fallout::Managers;
 using namespace Fallout::UI;
 
@@ -13,7 +15,7 @@ using namespace Fallout::UI;
 #pragma comment (lib, "d3dx10.lib")
 
 DXManager::DXManager(){
-
+	_window = WinWindow();
 }
 
 DXManager::~DXManager(){
@@ -21,10 +23,11 @@ DXManager::~DXManager(){
 }
 
 bool DXManager::init(DisplayPtr display){
-	std::cerr << "DXINIT" << std::endl;
+	//init window for DX
+	_window.init(display);
 	return true;
 }
 void DXManager::start(){
-	std::cerr << "DXSTART" << std::endl;
+	_window.start();
 	return;
 }

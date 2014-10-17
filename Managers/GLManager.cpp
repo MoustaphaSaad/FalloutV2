@@ -1,4 +1,5 @@
 #include"GLManager.h"
+#include"../Core/FalloutEngine.h"
 #include<iostream>
 #include<GL\glew.h>
 #include<GL\freeglut.h>
@@ -27,8 +28,10 @@ bool GLManager::init(DisplayPtr d){
 	glutInitWindowSize(d->_width, d->_height);
 	glutCreateWindow(d->_title.c_str());
 	//init GL
-	glutInitContextVersion(4, 1);
+
+	glutInitContextVersion(3, 1);
 	glutInitContextProfile(GLUT_CORE_PROFILE);
+	//init glew
 	GLenum err = glewInit();
 	if (err != GLEW_OK){
 		std::cerr << "GLEW error : " << glewGetErrorString(err) << std::endl;
@@ -37,6 +40,12 @@ bool GLManager::init(DisplayPtr d){
 	return true;
 }
 void GLManager::start(){
+	glutDisplayFunc(&GLManager::display);
+	glutIdleFunc(&GLManager::idle);
+	glutReshapeFunc(&GLManager::reshape);
+
+	//start loop
+	glutMainLoop();
 	return;
 }
 
@@ -46,6 +55,6 @@ void GLManager::display(){
 void GLManager::idle(){
 	//do this when idle
 }
-void GLManager::reshape(){
+void GLManager::reshape(int w,int h){
 	// do this when the window resizes
 }

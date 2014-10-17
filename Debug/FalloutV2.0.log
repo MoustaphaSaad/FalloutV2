@@ -1,4 +1,4 @@
-﻿Build started 14/10/2014 05:07:45 م.
+﻿Build started 17/10/2014 07:13:16 م.
      1>Project "D:\FalloutV2\FalloutV2.0.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
@@ -10,9 +10,10 @@
          Debug\IGXManager.obj
          Debug\Source.obj
          Debug\Display.obj
+         Debug\WinWindow.obj
          FalloutV2.0.vcxproj -> D:\FalloutV2\Debug\FalloutV2.0.exe
      1>Done Building Project "D:\FalloutV2\FalloutV2.0.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.78
+Time Elapsed 00:00:01.30

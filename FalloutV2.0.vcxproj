@@ -88,6 +88,7 @@
     <ClCompile Include="Managers\IGXManager.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="UI\Display.cpp" />
+    <ClCompile Include="UI\WinWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\FalloutCore.h" />
@@ -98,6 +99,7 @@
     <ClInclude Include="Managers\IGXManager.h" />
     <ClInclude Include="UI\Display.h" />
     <ClInclude Include="UI\FalloutUI.h" />
+    <ClInclude Include="UI\WinWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

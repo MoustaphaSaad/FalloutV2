@@ -8,7 +8,7 @@ namespace Fallout{
 			~GLManager();
 			//static function to power glut
 			static void display();
-			static void reshape();
+			static void reshape(int w, int h);
 			static void idle();
 			//overriding init function
 			bool init(UI::DisplayPtr display);

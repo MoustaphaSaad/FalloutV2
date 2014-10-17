@@ -42,6 +42,9 @@
     <ClCompile Include="Managers\DXManager.cpp">
       <Filter>Header Files\Managers</Filter>
     </ClCompile>
+    <ClCompile Include="UI\WinWindow.cpp">
+      <Filter>Header Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\FalloutEngine.h">
@@ -67,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="Managers\DXManager.h">
       <Filter>Header Files\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\WinWindow.h">
+      <Filter>Header Files\UI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

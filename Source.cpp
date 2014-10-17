@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string>
 #include"Core\FalloutCore.h"
 #include"UI\FalloutUI.h"
 using namespace std;
@@ -7,10 +8,13 @@ using namespace Fallout::UI;
 
 int main(){
 	FalloutEnginePtr engine = FalloutEngine::getInstance();
-	bool initOk = engine->init(DisplayPtr(new Display(800,600,"Test")),GraphicsHandle::OPENGL);
-	if (initOk){
-		engine->join(true);
-		engine->start();
+	engine->setup(DisplayPtr(new Display(800,600,"TestGL")),GraphicsHandle::DIRECTX);
+	engine->join(false);
+	engine->start();
+	string line;
+	while (getline(cin, line)){
+		if (line == "close")
+			break;
 	}
 
 	return 0;
