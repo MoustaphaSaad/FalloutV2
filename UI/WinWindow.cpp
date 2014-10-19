@@ -3,6 +3,8 @@ using namespace std;
 using namespace Fallout::UI;
 WinWindow::WinWindow(){
 	_handle = NULL;
+	display = NULL;
+	reshape = NULL;
 }
 HWND WinWindow::getHandle(){
 	return _handle;
@@ -86,6 +88,8 @@ void WinWindow::start(){
 				break;
 		}
 		else{
+			if (display)
+				display();
 			//call engine functions
 		}
 	}
