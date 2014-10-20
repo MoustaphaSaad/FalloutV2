@@ -22,6 +22,9 @@
     <Filter Include="Header Files\Managers">
       <UniqueIdentifier>{871f017b-2e30-4c79-be9f-d813a0add4cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Math">
+      <UniqueIdentifier>{cfb6e93a-b56e-4b0b-b1c6-3d6d71715fab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -73,6 +76,15 @@
     </ClInclude>
     <ClInclude Include="UI\WinWindow.h">
       <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Vector2.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\FalloutMath.h">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\MiscMath.h">
+      <Filter>Header Files\Math</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

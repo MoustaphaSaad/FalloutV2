@@ -51,8 +51,11 @@ void GLManager::start(){
 
 void GLManager::display(){
 	//render function
+	glClear(GL_COLOR_BUFFER_BIT);
+	glutSwapBuffers();
 }
 void GLManager::idle(){
+	glutPostRedisplay();
 	//do this when idle
 }
 void GLManager::reshape(int w,int h){

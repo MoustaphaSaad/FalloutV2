@@ -41,7 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(ProjectDir)\Libraries\glm\include;$(ProjectDir)\Libraries\freeglut\include;$(ProjectDir)\Libraries\glew-1.10.0\include;$(ProjectDir)\Managers;$(ProjectDir)\UI;$(ProjectDir)\Core;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(ProjectDir)\Libraries\glm\include;$(ProjectDir)\Libraries\freeglut\include;$(ProjectDir)\Libraries\glew-1.10.0\include;$(ProjectDir)\Managers;$(ProjectDir)\UI;${ProjectDir)\Math;$(ProjectDir)\Core;$(IncludePath)</IncludePath>
     <LibraryPath>"C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86";$(ProjectDir)\Libraries\glew-1.10.0\lib\Release\Win32;$(ProjectDir)\Libraries\freeglut\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -97,6 +97,9 @@
     <ClInclude Include="Managers\FalloutManagers.h" />
     <ClInclude Include="Managers\GLManager.h" />
     <ClInclude Include="Managers\IGXManager.h" />
+    <ClInclude Include="Math\FalloutMath.h" />
+    <ClInclude Include="Math\MiscMath.h" />
+    <ClInclude Include="Math\Vector2.h" />
     <ClInclude Include="UI\Display.h" />
     <ClInclude Include="UI\FalloutUI.h" />
     <ClInclude Include="UI\WinWindow.h" />
