@@ -34,6 +34,5 @@ namespace Fallout{
 			void start();
 
 		};
-		//typedef std::shared_ptr<DXManager> DXManagerPtr;
 	}
 }

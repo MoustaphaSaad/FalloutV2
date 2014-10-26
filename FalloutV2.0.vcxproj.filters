@@ -22,8 +22,11 @@
     <Filter Include="Header Files\Managers">
       <UniqueIdentifier>{871f017b-2e30-4c79-be9f-d813a0add4cd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Math">
-      <UniqueIdentifier>{cfb6e93a-b56e-4b0b-b1c6-3d6d71715fab}</UniqueIdentifier>
+    <Filter Include="Header Files\Managers\Graphics">
+      <UniqueIdentifier>{d105ba16-cf25-48ff-a639-6429421d0a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Managers\Input">
+      <UniqueIdentifier>{64a91f69-ad7b-4918-bb45-84d2f1454ba5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -36,17 +39,20 @@
     <ClCompile Include="UI\Display.cpp">
       <Filter>Header Files\UI</Filter>
     </ClCompile>
-    <ClCompile Include="Managers\IGXManager.cpp">
-      <Filter>Header Files\Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="Managers\GLManager.cpp">
-      <Filter>Header Files\Managers</Filter>
-    </ClCompile>
-    <ClCompile Include="Managers\DXManager.cpp">
-      <Filter>Header Files\Managers</Filter>
-    </ClCompile>
     <ClCompile Include="UI\WinWindow.cpp">
       <Filter>Header Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\DXManager.cpp">
+      <Filter>Header Files\Managers\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\GLManager.cpp">
+      <Filter>Header Files\Managers\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\IGXManager.cpp">
+      <Filter>Header Files\Managers\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\IKeyboard.cpp">
+      <Filter>Header Files\Managers\Input</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,29 +68,23 @@
     <ClInclude Include="UI\FalloutUI.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="Managers\FalloutManagers.h">
-      <Filter>Header Files\Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="Managers\IGXManager.h">
-      <Filter>Header Files\Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="Managers\GLManager.h">
-      <Filter>Header Files\Managers</Filter>
-    </ClInclude>
-    <ClInclude Include="Managers\DXManager.h">
-      <Filter>Header Files\Managers</Filter>
-    </ClInclude>
     <ClInclude Include="UI\WinWindow.h">
       <Filter>Header Files\UI</Filter>
     </ClInclude>
-    <ClInclude Include="Math\Vector2.h">
-      <Filter>Header Files\Math</Filter>
+    <ClInclude Include="Managers\DXManager.h">
+      <Filter>Header Files\Managers\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Math\FalloutMath.h">
-      <Filter>Header Files\Math</Filter>
+    <ClInclude Include="Managers\FalloutManagers.h">
+      <Filter>Header Files\Managers\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Math\MiscMath.h">
-      <Filter>Header Files\Math</Filter>
+    <ClInclude Include="Managers\GLManager.h">
+      <Filter>Header Files\Managers\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\IGXManager.h">
+      <Filter>Header Files\Managers\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\IKeyboard.h">
+      <Filter>Header Files\Managers\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

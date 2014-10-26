@@ -159,5 +159,7 @@ namespace Fallout{
 			}
 
 		};
+		typedef Vector2<float> vec2f;
+		typedef Vector2<int> vec2i;
 	}
 }

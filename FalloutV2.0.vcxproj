@@ -86,6 +86,7 @@
     <ClCompile Include="Managers\DXManager.cpp" />
     <ClCompile Include="Managers\GLManager.cpp" />
     <ClCompile Include="Managers\IGXManager.cpp" />
+    <ClCompile Include="Managers\IKeyboard.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="UI\Display.cpp" />
     <ClCompile Include="UI\WinWindow.cpp" />
@@ -97,9 +98,7 @@
     <ClInclude Include="Managers\FalloutManagers.h" />
     <ClInclude Include="Managers\GLManager.h" />
     <ClInclude Include="Managers\IGXManager.h" />
-    <ClInclude Include="Math\FalloutMath.h" />
-    <ClInclude Include="Math\MiscMath.h" />
-    <ClInclude Include="Math\Vector2.h" />
+    <ClInclude Include="Managers\IKeyboard.h" />
     <ClInclude Include="UI\Display.h" />
     <ClInclude Include="UI\FalloutUI.h" />
     <ClInclude Include="UI\WinWindow.h" />
