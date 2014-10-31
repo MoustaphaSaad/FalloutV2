@@ -1,9 +1,14 @@
 #pragma once
 #include<map>
+#include<memory>
 namespace Fallout{
 	namespace Input{
 		class IKeyboard{
 		public:
+			//defualt constructor
+			IKeyboard();
+			//destructor
+			~IKeyboard();
 			//key state
 			enum KeyState{
 				Down, Up, None
@@ -120,9 +125,12 @@ namespace Fallout{
 
 			//get key state
 			static KeyState getKey(Keys key);
-		private:
+			//virtual update function for GL & DX
+			virtual void update();
+		protected:
 			//map to register the pressed keys
 			static std::map<Keys, KeyState> _data;
 		};
+		typedef std::shared_ptr<IKeyboard> IKeyboardPtr;
 	}
 }

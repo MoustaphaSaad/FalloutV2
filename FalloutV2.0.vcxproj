@@ -84,6 +84,7 @@
   <ItemGroup>
     <ClCompile Include="Core\FalloutEngine.cpp" />
     <ClCompile Include="Managers\DXManager.cpp" />
+    <ClCompile Include="Managers\GLKeyboard.cpp" />
     <ClCompile Include="Managers\GLManager.cpp" />
     <ClCompile Include="Managers\IGXManager.cpp" />
     <ClCompile Include="Managers\IKeyboard.cpp" />
@@ -96,6 +97,7 @@
     <ClInclude Include="Core\FalloutEngine.h" />
     <ClInclude Include="Managers\DXManager.h" />
     <ClInclude Include="Managers\FalloutManagers.h" />
+    <ClInclude Include="Managers\GLKeyboard.h" />
     <ClInclude Include="Managers\GLManager.h" />
     <ClInclude Include="Managers\IGXManager.h" />
     <ClInclude Include="Managers\IKeyboard.h" />

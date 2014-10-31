@@ -1,10 +1,12 @@
 #include"GLManager.h"
 #include"../Core/FalloutEngine.h"
+#include"GLKeyboard.h"
 #include<iostream>
 #include<GL\glew.h>
 #include<GL\freeglut.h>
 using namespace Fallout::Managers;
 using namespace Fallout::UI;
+using namespace Fallout::Input;
 
 //linking libraries
 #pragma comment(lib,"glew32.lib")
@@ -43,6 +45,7 @@ void GLManager::start(){
 	glutDisplayFunc(&GLManager::display);
 	glutIdleFunc(&GLManager::idle);
 	glutReshapeFunc(&GLManager::reshape);
+	glutKeyboardFunc(&GLKeyboard::keyboardDownFunc);
 
 	//start loop
 	glutMainLoop();

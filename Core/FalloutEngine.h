@@ -4,6 +4,7 @@
 #include<thread>
 #include"../UI/Display.h"
 #include"../Managers/IGXManager.h"
+#include"../Managers/IKeyboard.h"
 
 namespace Fallout{
 	namespace Core{
@@ -41,6 +42,8 @@ namespace Fallout{
 			Managers::IGXManagerPtr _graphicsDevice;
 			//bool to check if we'll join the thread or not
 			bool _joinable;
+			//keyboard manager
+			Input::IKeyboardPtr _keyboard;
 		};
 		typedef std::shared_ptr<FalloutEngine> FalloutEnginePtr;
 	}

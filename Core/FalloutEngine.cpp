@@ -1,10 +1,12 @@
 #include"FalloutEngine.h"
 #include"../Managers/GLManager.h"
 #include"../Managers/DXManager.h"
+#include"../Managers/GLKeyboard.h"
 using namespace std;
 using namespace Fallout::Core;
 using namespace Fallout::UI;
 using namespace Fallout::Managers;
+using namespace Fallout::Input;
 FalloutEnginePtr FalloutEngine::_instance = nullptr;
 
 FalloutEngine::FalloutEngine(){
@@ -12,6 +14,7 @@ FalloutEngine::FalloutEngine(){
 	_mainThread = NULL;
 	_display = nullptr;
 	_graphicsDevice = nullptr;
+	_keyboard = nullptr;
 	_joinable = false;
 }
 FalloutEngine::~FalloutEngine(){
@@ -38,6 +41,7 @@ void FalloutEngine::setup(DisplayPtr display, GraphicsHandle type){
 	if (_api == GraphicsHandle::OPENGL){
 		//initialize OpenGL device
 		_graphicsDevice = IGXManagerPtr(new GLManager());
+		_keyboard = IKeyboardPtr(new GLKeyboard());
 	}
 	else if (_api == GraphicsHandle::DIRECTX){
 		//initialize DirectX device
