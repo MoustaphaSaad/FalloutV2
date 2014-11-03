@@ -88,7 +88,9 @@
     <ClCompile Include="Managers\GLManager.cpp" />
     <ClCompile Include="Managers\IGXManager.cpp" />
     <ClCompile Include="Managers\IKeyboard.cpp" />
+    <ClCompile Include="Samples\FirstSample.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="UI\Application.cpp" />
     <ClCompile Include="UI\Display.cpp" />
     <ClCompile Include="UI\WinWindow.cpp" />
   </ItemGroup>
@@ -101,6 +103,8 @@
     <ClInclude Include="Managers\GLManager.h" />
     <ClInclude Include="Managers\IGXManager.h" />
     <ClInclude Include="Managers\IKeyboard.h" />
+    <ClInclude Include="Samples\FirstSample.h" />
+    <ClInclude Include="UI\Application.h" />
     <ClInclude Include="UI\Display.h" />
     <ClInclude Include="UI\FalloutUI.h" />
     <ClInclude Include="UI\WinWindow.h" />

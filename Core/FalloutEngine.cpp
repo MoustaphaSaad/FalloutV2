@@ -16,6 +16,7 @@ FalloutEngine::FalloutEngine(){
 	_graphicsDevice = nullptr;
 	_keyboard = nullptr;
 	_joinable = false;
+	_application = nullptr;
 }
 FalloutEngine::~FalloutEngine(){
 	_instance = nullptr;
@@ -25,6 +26,8 @@ FalloutEngine::~FalloutEngine(){
 		_display = nullptr;
 	if (_graphicsDevice)
 		_graphicsDevice = nullptr;
+	if (_application)
+		_application = nullptr;
 }
 FalloutEnginePtr FalloutEngine::getInstance(){
 	if (_instance == nullptr)
@@ -76,4 +79,8 @@ void FalloutEngine::join(bool val){
 
 DisplayPtr FalloutEngine::getDisplay(){
 	return _display;
+}
+
+void FalloutEngine::setApplication(ApplicationPtr app){
+	_application = app;
 }

@@ -28,6 +28,9 @@
     <Filter Include="Header Files\Managers\Input">
       <UniqueIdentifier>{64a91f69-ad7b-4918-bb45-84d2f1454ba5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Samples">
+      <UniqueIdentifier>{fdd8db35-6851-479c-ae30-67c8e3de7e73}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -56,6 +59,12 @@
     </ClCompile>
     <ClCompile Include="Managers\GLKeyboard.cpp">
       <Filter>Header Files\Managers\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Application.cpp">
+      <Filter>Header Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Samples\FirstSample.cpp">
+      <Filter>Source Files\Samples</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +100,12 @@
     </ClInclude>
     <ClInclude Include="Managers\GLKeyboard.h">
       <Filter>Header Files\Managers\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Application.h">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Samples\FirstSample.h">
+      <Filter>Source Files\Samples</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

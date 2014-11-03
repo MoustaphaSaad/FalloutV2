@@ -14,7 +14,7 @@ IKeyboard::KeyState IKeyboard::getKey(IKeyboard::Keys key){
 	map<IKeyboard::Keys, IKeyboard::KeyState>::iterator it;
 	it = _data.find(key);
 	if (it == _data.end())
-		return IKeyboard::KeyState::None;
+		return IKeyboard::KeyState::State_None;
 	return it->second;
 }
 

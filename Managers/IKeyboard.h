@@ -11,7 +11,7 @@ namespace Fallout{
 			~IKeyboard();
 			//key state
 			enum KeyState{
-				Down, Up, None
+				State_Down, State_Up, State_None
 			};
 			//keys
 			enum Keys{

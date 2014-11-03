@@ -5,6 +5,7 @@
 #include"../UI/Display.h"
 #include"../Managers/IGXManager.h"
 #include"../Managers/IKeyboard.h"
+#include"../UI/Application.h"
 
 namespace Fallout{
 	namespace Core{
@@ -24,6 +25,8 @@ namespace Fallout{
 			UI::DisplayPtr getDisplay();
 			//get instance
 			static std::shared_ptr<FalloutEngine> getInstance();
+			//application setter
+			void setApplication(UI::ApplicationPtr app);
 		private:
 			//this is a private constructor
 			FalloutEngine();
@@ -44,6 +47,8 @@ namespace Fallout{
 			bool _joinable;
 			//keyboard manager
 			Input::IKeyboardPtr _keyboard;
+			//Application pointer
+			UI::ApplicationPtr _application;
 		};
 		typedef std::shared_ptr<FalloutEngine> FalloutEnginePtr;
 	}
