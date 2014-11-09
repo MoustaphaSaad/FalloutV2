@@ -54,13 +54,19 @@ void GLManager::start(){
 
 void GLManager::display(){
 	//render function
-	glClear(GL_COLOR_BUFFER_BIT);
+	Core::FalloutEngine::getInstance()->gameLoop();
 	glutSwapBuffers();
 }
 void GLManager::idle(){
-	glutPostRedisplay();
+	Core::FalloutEngine::getInstance()->gameLoop();
 	//do this when idle
 }
 void GLManager::reshape(int w,int h){
 	// do this when the window resizes
+}
+void GLManager::clearBuffers(){
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
+void GLManager::swapBuffers(){
+	glutPostRedisplay();
 }

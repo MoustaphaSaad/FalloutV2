@@ -4,17 +4,22 @@
 #include<thread>
 #include"../UI/Display.h"
 #include"../Managers/IGXManager.h"
+#include"../Managers/GLManager.h"
+#include"../Managers/DXManager.h"
 #include"../Managers/IKeyboard.h"
 #include"../UI/Application.h"
+#include"IRenderer.h"
 
 namespace Fallout{
 	namespace Core{
 		enum GraphicsHandle{ OPENGL, DIRECTX };
 		class FalloutEngine{
+			friend class Fallout::Managers::GLManager;
+			friend class Fallout::Managers::DXManager;
 		public: 
 			~FalloutEngine();
-			//init function takes display, Graphics handle
-			void setup(UI::DisplayPtr display,GraphicsHandle type);
+			//init function takes display, Graphics handle, and you can pass a custom renderer or it will be the defualt one
+			void setup(UI::DisplayPtr display,GraphicsHandle type, IRendererPtr renderer = IRendererPtr(new IRenderer()));
 			//will take an application
 			void start();
 			//graphics device getter
@@ -32,6 +37,8 @@ namespace Fallout{
 			FalloutEngine();
 			//private init function for the thread to run, in winAPI Window is attached to the thread that made it
 			bool init();
+			//gameloop gate function
+			void gameLoop();
 
 			//this is singelton pattern
 			static std::shared_ptr<FalloutEngine> _instance;
@@ -49,6 +56,8 @@ namespace Fallout{
 			Input::IKeyboardPtr _keyboard;
 			//Application pointer
 			UI::ApplicationPtr _application;
+			//renderer this will
+			IRendererPtr _renderer;
 		};
 		typedef std::shared_ptr<FalloutEngine> FalloutEnginePtr;
 	}

@@ -32,7 +32,10 @@ namespace Fallout{
 			bool init(UI::DisplayPtr display);
 			//overriding start function
 			void start();
-
+			//clear buffer function
+			void clearBuffers();
+			//swap chain
+			void swapBuffers();
 		};
 	}
 }

@@ -83,6 +83,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Core\FalloutEngine.cpp" />
+    <ClCompile Include="Core\IRenderer.cpp" />
+    <ClCompile Include="Core\Time.cpp" />
     <ClCompile Include="Managers\DXManager.cpp" />
     <ClCompile Include="Managers\GLKeyboard.cpp" />
     <ClCompile Include="Managers\GLManager.cpp" />
@@ -97,6 +99,8 @@
   <ItemGroup>
     <ClInclude Include="Core\FalloutCore.h" />
     <ClInclude Include="Core\FalloutEngine.h" />
+    <ClInclude Include="Core\IRenderer.h" />
+    <ClInclude Include="Core\Time.h" />
     <ClInclude Include="Managers\DXManager.h" />
     <ClInclude Include="Managers\FalloutManagers.h" />
     <ClInclude Include="Managers\GLKeyboard.h" />

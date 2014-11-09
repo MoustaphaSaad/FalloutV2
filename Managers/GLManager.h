@@ -15,6 +15,10 @@ namespace Fallout{
 			bool init(UI::DisplayPtr display);
 			//overriding start function
 			void start();
+			//glClear
+			void clearBuffers();
+			//glpostredisplay
+			void swapBuffers();
 		};
 	}
 }

@@ -13,6 +13,10 @@ namespace Fallout{
 			//init function
 			virtual bool init(UI::DisplayPtr display);
 			virtual void start();
+			//this function meant to clear the buffers 
+			virtual void clearBuffers();
+			//swapBuffer
+			virtual void swapBuffers();
 		};
 		typedef std::shared_ptr<IGXManager> IGXManagerPtr;
 	}

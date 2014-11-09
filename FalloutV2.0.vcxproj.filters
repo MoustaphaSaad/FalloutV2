@@ -66,6 +66,12 @@
     <ClCompile Include="Samples\FirstSample.cpp">
       <Filter>Source Files\Samples</Filter>
     </ClCompile>
+    <ClCompile Include="Core\IRenderer.cpp">
+      <Filter>Header Files\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Time.cpp">
+      <Filter>Header Files\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\FalloutEngine.h">
@@ -106,6 +112,12 @@
     </ClInclude>
     <ClInclude Include="Samples\FirstSample.h">
       <Filter>Source Files\Samples</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\IRenderer.h">
+      <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Time.h">
+      <Filter>Header Files\Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

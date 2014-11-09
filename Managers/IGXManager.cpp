@@ -13,3 +13,9 @@ bool IGXManager::init(DisplayPtr display){
 void IGXManager::start(){
 	return;
 }
+void IGXManager::clearBuffers(){
+
+}
+void IGXManager::swapBuffers(){
+
+}
