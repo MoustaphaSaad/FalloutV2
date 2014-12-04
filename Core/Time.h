@@ -20,10 +20,13 @@ namespace Fallout{
 			static int _frameCounter;
 			//second tick to count every second
 			static double _secondTick;
+			//counter to indicate the elapsed time
+			static double _totalElapsedTime;
 		public:
 			static TimeType _type;
 			static double getTime();
 			static void setFrameLimit(int limit);
+			static int getFrameLimit();
 		};
 	}
 }

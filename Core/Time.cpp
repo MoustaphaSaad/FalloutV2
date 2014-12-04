@@ -8,11 +8,12 @@ using namespace std;
 double Time::_freq = 0;
 bool Time::_init = false;
 TimeType Time::_type = TimeType::LIMITED;
-int Time::_frameLimit = 30;
+int Time::_frameLimit = 60;
 double Time::_lastTime = 0;
 double Time::_counter = 0;
 double Time::_secondTick = 0;
 int Time::_frameCounter = 0;
+double Time::_totalElapsedTime = 0;
 
 double Time::getTime(){
 	LARGE_INTEGER li;
@@ -32,4 +33,7 @@ double Time::getTime(){
 void Time::setFrameLimit(int limit){
 	if (limit > 0)
 		_frameLimit = limit;
+}
+int Time::getFrameLimit(){
+	return _frameLimit;
 }

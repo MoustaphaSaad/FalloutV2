@@ -19,7 +19,7 @@ FalloutEngine::FalloutEngine(){
 	_renderer = nullptr;
 }
 FalloutEngine::~FalloutEngine(){
-	_instance = nullptr;
+
 	if (_mainThread && !_joinable)
 		_mainThread->detach();
 	if (_display)
@@ -28,6 +28,7 @@ FalloutEngine::~FalloutEngine(){
 		_graphicsDevice = nullptr;
 	if (_application)
 		_application = nullptr;
+	_instance = nullptr;
 }
 FalloutEnginePtr FalloutEngine::getInstance(){
 	if (_instance == nullptr)
@@ -84,12 +85,14 @@ DisplayPtr FalloutEngine::getDisplay(){
 
 void FalloutEngine::setApplication(ApplicationPtr app){
 	_application = app;
+	_renderer->setApplication(_application);
 }
 void FalloutEngine::gameLoop(){
 	//calculate delta
 	double current = Time::getTime();
 	double delta = current - Time::_lastTime;
 	Time::_lastTime = current;
+	Time::_totalElapsedTime += delta;
 	//increase the counter by the delta time
 	Time::_counter += delta;
 	Time::_secondTick += delta;
@@ -98,7 +101,6 @@ void FalloutEngine::gameLoop(){
 
 	//check if a second passed
 	if (Time::_secondTick >= 1){
-		cerr << Time::_frameCounter << endl;
 		//reset second tick
 		Time::_secondTick = 0;
 		//reset frame counter
@@ -114,16 +116,25 @@ void FalloutEngine::gameLoop(){
 	}
 	else if (Time::_type == TimeType::UNLIMITED){
 		//doesn't matter we always render as much as possible
-		Time::_counter = 0;
 		needRender = true;
 	}
-	
+	//calling the processing fucntions every loop
+	input();
+	update(TimeStep(delta, Time::_totalElapsedTime));
 	//if need redner then render the scene
 	if (needRender)
 	{
 		//increase frame count by one
 		Time::_frameCounter++;
-		_graphicsDevice->clearBuffers();
-		_graphicsDevice->swapBuffers();
+		render();
 	}
+}
+void FalloutEngine::input(){
+	_renderer->input();
+}
+void FalloutEngine::update(TimeStep time){
+	_renderer->update(time);
+}
+void FalloutEngine::render(){
+	_renderer->render();
 }

@@ -1,6 +1,8 @@
 #include"WinWindow.h"
+#include<iostream>
 using namespace std;
 using namespace Fallout::UI;
+WinWindow* WinWindow::_instance = NULL;
 WinWindow::WinWindow(){
 	_handle = NULL;
 	display = NULL;
@@ -21,12 +23,21 @@ LRESULT CALLBACK WinWindow::WindowProc(HWND hWnd, UINT message, WPARAM wParam, L
 					   PostQuitMessage(0);
 					   return 0;
 	} break;
+	case WM_SIZE:
+		if (_instance->reshape)
+			_instance->reshape(LOWORD(lParam), HIWORD(lParam));
+		break;
 	}
 
 	// Handle any messages the switch statement didn't
 	return DefWindowProc(hWnd, message, wParam, lParam);
 }
-
+WinWindow* WinWindow::getInstance(){
+	if (_instance == NULL){
+		_instance = new WinWindow();
+	}
+	return _instance;
+}
 std::wstring s2ws(const std::string& s)
 {
 	int len;
@@ -46,7 +57,7 @@ bool WinWindow::init(DisplayPtr display){
 
 	wc.cbSize = sizeof(WNDCLASSEX);
 	wc.style = CS_HREDRAW | CS_VREDRAW;
-	wc.lpfnWndProc = &WinWindow::WindowProc;
+	wc.lpfnWndProc = _instance->WindowProc;
 	wc.hInstance = NULL;
 	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
 	wc.hbrBackground = (HBRUSH)COLOR_WINDOW;
@@ -84,7 +95,7 @@ void WinWindow::start(){
 
 			// send the message to the WindowProc function
 			DispatchMessage(&msg);
-			if (msg.message == WM_QUIT)
+			if (msg.message == WM_QUIT || msg.message == WM_DESTROY)
 				break;
 		}
 		else{

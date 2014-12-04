@@ -12,7 +12,7 @@ using namespace Fallout::UI;
 #pragma comment (lib, "d3dx10.lib")
 
 DXManager::DXManager(){
-	_window = WinWindow();
+	_window = WinWindow::getInstance();
 	_swapChain = NULL;
 	_device = NULL;
 	_deviceContext = NULL;
@@ -25,11 +25,13 @@ DXManager::~DXManager(){
 		_device->Release();
 	if (_deviceContext)
 		_deviceContext->Release();
+	if (_window)
+		delete _window;
 }
 
 bool DXManager::init(DisplayPtr display){
 	//init window for DX
-	_window.init(display);
+	_window->init(display);
 	//init the DX itself
 	//swap chain desc
 	DXGI_SWAP_CHAIN_DESC scd;
@@ -38,7 +40,7 @@ bool DXManager::init(DisplayPtr display){
 	scd.BufferCount = 1;
 	scd.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
 	scd.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-	scd.OutputWindow = _window.getHandle();
+	scd.OutputWindow = _window->getHandle();
 	scd.SampleDesc.Count = 4;
 	scd.Windowed = TRUE;
 
@@ -73,10 +75,10 @@ bool DXManager::init(DisplayPtr display){
 }
 void DXManager::start(){
 	//assigning functions
-	_window.display = &DXManager::display;
-	_window.reshape = &DXManager::reshape;
+	_window->display = &DXManager::display;
+	_window->reshape = &DXManager::reshape;
 
-	_window.start();
+	_window->start();
 	return;
 }
 void DXManager::display(){
@@ -92,6 +94,7 @@ void DXManager::idle(){
 }
 void DXManager::reshape(int w, int h){
 	// do this when the window resizes
+	cout << w << "||" << h << endl;
 }
 void DXManager::clearBuffers(){
 	_deviceContext->ClearRenderTargetView(_backBuffer, D3DXCOLOR(0, 0, 0, 0));

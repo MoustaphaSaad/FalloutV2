@@ -10,7 +10,7 @@ namespace Fallout{
 		class DXManager : public IGXManager{
 		private:
 			//windows window
-			UI::WinWindow _window;
+			UI::WinWindow* _window;
 			//swap chain pointer
 			IDXGISwapChain* _swapChain;
 			//device pointer

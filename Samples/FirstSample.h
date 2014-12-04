@@ -14,7 +14,7 @@ namespace Fallout{
 			void setupScene();
 
 			void input();
-			void update();
+			void update(TimeStep time);
 			void render();
 		};
 	}

@@ -4,6 +4,7 @@
 #include<iostream>
 #include<GL\glew.h>
 #include<GL\freeglut.h>
+using namespace std;
 using namespace Fallout::Managers;
 using namespace Fallout::UI;
 using namespace Fallout::Input;
@@ -63,6 +64,7 @@ void GLManager::idle(){
 }
 void GLManager::reshape(int w,int h){
 	// do this when the window resizes
+	cout << w << "||" << h << endl;
 }
 void GLManager::clearBuffers(){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

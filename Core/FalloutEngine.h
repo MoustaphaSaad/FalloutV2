@@ -9,6 +9,7 @@
 #include"../Managers/IKeyboard.h"
 #include"../UI/Application.h"
 #include"IRenderer.h"
+#include"TimeStep.h"
 
 namespace Fallout{
 	namespace Core{
@@ -39,6 +40,10 @@ namespace Fallout{
 			bool init();
 			//gameloop gate function
 			void gameLoop();
+			//private function that handles gameloop
+			void input();
+			void update(TimeStep step);
+			void render();
 
 			//this is singelton pattern
 			static std::shared_ptr<FalloutEngine> _instance;

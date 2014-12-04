@@ -1,5 +1,6 @@
 #pragma once
 #include<memory>
+#include"../Core/TimeStep.h"
 namespace Fallout{
 	namespace UI{
 		class Application{
@@ -18,7 +19,7 @@ namespace Fallout{
 			//input function
 			virtual void input();
 			//update it will take the timestep later
-			virtual void update();
+			virtual void update(Fallout::Core::TimeStep time);
 			//render function
 			virtual void render();
 		};

@@ -2,7 +2,10 @@
 using namespace Fallout::UI;
 
 Application::Application(){
-
+	//calling the initialization functions to init the scene
+	init();
+	loadResources();
+	setupScene();
 }
 
 Application::~Application(){
@@ -23,7 +26,7 @@ void Application::setupScene(){
 void Application::input(){
 
 }
-void Application::update(){
+void Application::update(Fallout::Core::TimeStep time){
 
 }
 void Application::render(){
