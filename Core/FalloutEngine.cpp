@@ -1,6 +1,9 @@
 #include"FalloutEngine.h"
 #include"../Managers/DXManager.h"
 #include"../Managers/GLKeyboard.h"
+#include"../Managers/DXKeyboard.h"
+#include"../Managers/GLMouse.h"
+#include"../Managers/DXMouse.h"
 using namespace std;
 using namespace Fallout::Core;
 using namespace Fallout::UI;
@@ -17,6 +20,7 @@ FalloutEngine::FalloutEngine(){
 	_joinable = false;
 	_application = nullptr;
 	_renderer = nullptr;
+	_mouse = nullptr;
 }
 FalloutEngine::~FalloutEngine(){
 
@@ -28,6 +32,12 @@ FalloutEngine::~FalloutEngine(){
 		_graphicsDevice = nullptr;
 	if (_application)
 		_application = nullptr;
+	if(_keyboard)
+		_keyboard = nullptr;
+	if(_mouse)
+		_mouse = nullptr;
+	if(_renderer)
+		_renderer = nullptr;
 	_instance = nullptr;
 }
 FalloutEnginePtr FalloutEngine::getInstance(){
@@ -47,10 +57,13 @@ void FalloutEngine::setup(DisplayPtr display, GraphicsHandle type, IRendererPtr 
 		//initialize OpenGL device
 		_graphicsDevice = IGXManagerPtr(new GLManager());
 		_keyboard = IKeyboardPtr(new GLKeyboard());
+		_mouse = IMousePtr(new GLMouse());
 	}
 	else if (_api == GraphicsHandle::DIRECTX){
 		//initialize DirectX device
 		_graphicsDevice = IGXManagerPtr(new DXManager());
+		_keyboard = IKeyboardPtr(new DXKeyboard());
+		_mouse = IMousePtr(new DXMouse());
 	}
 }
 bool FalloutEngine::init(){
@@ -129,8 +142,14 @@ void FalloutEngine::gameLoop(){
 		render();
 	}
 }
+
 void FalloutEngine::input(){
-	_renderer->input();
+	if (_renderer)
+		_renderer->input();
+	if (_keyboard)
+		_keyboard->update();
+	if(_mouse)
+		_mouse->update();
 }
 void FalloutEngine::update(TimeStep time){
 	_renderer->update(time);

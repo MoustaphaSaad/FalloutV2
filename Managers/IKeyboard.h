@@ -2,18 +2,31 @@
 #include<map>
 #include<memory>
 namespace Fallout{
+	namespace Core{
+		class FalloutEngine;
+	}
 	namespace Input{
 		class IKeyboard{
+			friend class Core::FalloutEngine;
 		public:
-			//defualt constructor
-			IKeyboard();
-			//destructor
 			~IKeyboard();
-			//key state
+
+			/**
+			 * @enum	KeyState
+			 *
+			 * @brief	Values that represent key states.
+			 */
+
 			enum KeyState{
 				State_Down, State_Up, State_None
 			};
-			//keys
+
+			/**
+			 * @enum	Keys
+			 *
+			 * @brief	Values that represent keys.
+			 */
+
 			enum Keys{
 				Backspace,
 				Tab,
@@ -123,12 +136,44 @@ namespace Fallout{
 				Right_Windows
 			};
 
-			//get key state
+			/**
+			 * @fn	static KeyState IKeyboard::getKey(Keys key);
+			 *
+			 * @brief	Gets a key current state.
+			 *
+			 * @author	Moustapha Saad
+			 * @date	23/01/2015
+			 *
+			 * @param	key	The key.
+			 *
+			 * @return	KeyState.
+			 */
+
 			static KeyState getKey(Keys key);
-			//virtual update function for GL & DX
-			virtual void update();
+
+			/**
+			 * @fn	virtual void IKeyboard::update();
+			 *
+			 * @brief	Updates this object.
+			 *
+			 * @author	Moustapha Saad
+			 * @date	23/01/2015
+			 */
+
 		protected:
-			//map to register the pressed keys
+			IKeyboard();
+
+			/**
+			 * @fn	virtual void IKeyboard::update();
+			 *
+			 * @brief	Updates this object.
+			 *
+			 * @author	Moustapha Saad
+			 * @date	24/01/2015
+			 */
+
+			virtual void update();
+			/** @brief	The data of the keys. */
 			static std::map<Keys, KeyState> _data;
 		};
 		typedef std::shared_ptr<IKeyboard> IKeyboardPtr;

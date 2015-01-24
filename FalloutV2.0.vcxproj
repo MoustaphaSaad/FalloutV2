@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -86,11 +86,15 @@
     <ClCompile Include="Core\IRenderer.cpp" />
     <ClCompile Include="Core\Time.cpp" />
     <ClCompile Include="Core\TimeStep.cpp" />
+    <ClCompile Include="Managers\DXKeyboard.cpp" />
     <ClCompile Include="Managers\DXManager.cpp" />
+    <ClCompile Include="Managers\DXMouse.cpp" />
     <ClCompile Include="Managers\GLKeyboard.cpp" />
     <ClCompile Include="Managers\GLManager.cpp" />
+    <ClCompile Include="Managers\GLMouse.cpp" />
     <ClCompile Include="Managers\IGXManager.cpp" />
     <ClCompile Include="Managers\IKeyboard.cpp" />
+    <ClCompile Include="Managers\IMouse.cpp" />
     <ClCompile Include="Samples\FirstSample.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="UI\Application.cpp" />
@@ -103,12 +107,17 @@
     <ClInclude Include="Core\IRenderer.h" />
     <ClInclude Include="Core\Time.h" />
     <ClInclude Include="Core\TimeStep.h" />
+    <ClInclude Include="Managers\DXKeyboard.h" />
     <ClInclude Include="Managers\DXManager.h" />
+    <ClInclude Include="Managers\DXMouse.h" />
+    <ClInclude Include="Managers\FalloutInput.h" />
     <ClInclude Include="Managers\FalloutManagers.h" />
     <ClInclude Include="Managers\GLKeyboard.h" />
     <ClInclude Include="Managers\GLManager.h" />
+    <ClInclude Include="Managers\GLMouse.h" />
     <ClInclude Include="Managers\IGXManager.h" />
     <ClInclude Include="Managers\IKeyboard.h" />
+    <ClInclude Include="Managers\IMouse.h" />
     <ClInclude Include="Samples\FirstSample.h" />
     <ClInclude Include="UI\Application.h" />
     <ClInclude Include="UI\Display.h" />

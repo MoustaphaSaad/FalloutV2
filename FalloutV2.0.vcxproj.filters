@@ -75,6 +75,18 @@
     <ClCompile Include="Core\TimeStep.cpp">
       <Filter>Header Files\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Managers\DXKeyboard.cpp">
+      <Filter>Header Files\Managers\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\IMouse.cpp">
+      <Filter>Header Files\Managers\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\GLMouse.cpp">
+      <Filter>Header Files\Managers\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Managers\DXMouse.cpp">
+      <Filter>Header Files\Managers\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\FalloutEngine.h">
@@ -124,6 +136,21 @@
     </ClInclude>
     <ClInclude Include="Core\TimeStep.h">
       <Filter>Header Files\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\FalloutInput.h">
+      <Filter>Header Files\Managers\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\DXKeyboard.h">
+      <Filter>Header Files\Managers\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\GLMouse.h">
+      <Filter>Header Files\Managers\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\IMouse.h">
+      <Filter>Header Files\Managers\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\DXMouse.h">
+      <Filter>Header Files\Managers\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

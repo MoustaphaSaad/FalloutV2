@@ -1,6 +1,7 @@
 #include"GLManager.h"
 #include"../Core/FalloutEngine.h"
 #include"GLKeyboard.h"
+#include"GLMouse.h"
 #include<iostream>
 #include<GL\glew.h>
 #include<GL\freeglut.h>
@@ -47,6 +48,10 @@ void GLManager::start(){
 	glutIdleFunc(&GLManager::idle);
 	glutReshapeFunc(&GLManager::reshape);
 	glutKeyboardFunc(&GLKeyboard::keyboardDownFunc);
+	glutKeyboardUpFunc(&GLKeyboard::keyboardUpFunc);
+	glutSpecialFunc(&GLKeyboard::keyboardSpecialDownFunc);
+	glutSpecialUpFunc(&GLKeyboard::keyboardSpecialUpFunc);
+	glutMouseFunc(&GLMouse::mouseButton);
 
 	//start loop
 	glutMainLoop();
@@ -64,7 +69,6 @@ void GLManager::idle(){
 }
 void GLManager::reshape(int w,int h){
 	// do this when the window resizes
-	cout << w << "||" << h << endl;
 }
 void GLManager::clearBuffers(){
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

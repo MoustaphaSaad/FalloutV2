@@ -8,6 +8,7 @@
 #include"../Managers/DXManager.h"
 #include"../Managers/IKeyboard.h"
 #include"../UI/Application.h"
+#include"../Managers/IMouse.h"
 #include"IRenderer.h"
 #include"TimeStep.h"
 
@@ -45,23 +46,40 @@ namespace Fallout{
 			void update(TimeStep step);
 			void render();
 
-			//this is singelton pattern
+			
+			/** @brief	The instance pointer for the engine. */
 			static std::shared_ptr<FalloutEngine> _instance;
-			//working thread to init in start
+
+			
+			/** @brief	The main working thread to init. */
 			std::thread* _mainThread;
-			//display window
+
+			/** @brief	The display window. */
 			UI::DisplayPtr _display;
-			//Graphics API
+			
+			/** @brief	The Graphics API. */
 			GraphicsHandle _api;
-			//Graphics Manager
+
+			
+			/** @brief	The graphics device. */
 			Managers::IGXManagerPtr _graphicsDevice;
-			//bool to check if we'll join the thread or not
+
+			
+			/** @brief	true if thread joinable. */
 			bool _joinable;
-			//keyboard manager
+
+			
+			/** @brief	The keyboard pointer that holds the keyboard. */
 			Input::IKeyboardPtr _keyboard;
-			//Application pointer
+
+			/** @brief	The mouse pointer that holds the mouse class. */
+			Input::IMousePtr _mouse;
+
+			
+			/** @brief	The application pointer that holds your app. */
 			UI::ApplicationPtr _application;
-			//renderer this will
+			
+			/** @brief	The renderer to be used in the engine. */
 			IRendererPtr _renderer;
 		};
 		typedef std::shared_ptr<FalloutEngine> FalloutEnginePtr;

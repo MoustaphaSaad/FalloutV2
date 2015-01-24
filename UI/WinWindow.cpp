@@ -1,4 +1,5 @@
 #include"WinWindow.h"
+#include"../Managers/DXManager.h"
 #include<iostream>
 using namespace std;
 using namespace Fallout::UI;
@@ -7,6 +8,9 @@ WinWindow::WinWindow(){
 	_handle = NULL;
 	display = NULL;
 	reshape = NULL;
+	keyboardKeyDown = NULL;
+	keyboardKeyUp = NULL;
+	mouseButton = NULL;
 }
 HWND WinWindow::getHandle(){
 	return _handle;
@@ -18,14 +22,49 @@ LRESULT CALLBACK WinWindow::WindowProc(HWND hWnd, UINT message, WPARAM wParam, L
 	{
 		// this message is read when the window is closed
 	case WM_DESTROY:
-	{
-					   // close the application entirely
-					   PostQuitMessage(0);
-					   return 0;
-	} break;
+		// close the application entirely
+		PostQuitMessage(0);
+		return 0;
+		break;
+	//resize event
 	case WM_SIZE:
 		if (_instance->reshape)
 			_instance->reshape(LOWORD(lParam), HIWORD(lParam));
+		break;
+	//keyboard key down event
+	case WM_KEYDOWN:
+		if (_instance->keyboardKeyDown)
+			_instance->keyboardKeyDown(wParam);
+		break;
+	case WM_KEYUP:
+		if(_instance->keyboardKeyUp)
+			_instance->keyboardKeyUp(wParam);
+		break;
+	case WM_LBUTTONDOWN:
+		if(_instance->mouseButton)
+			_instance->mouseButton(0,0);
+		break;
+	case WM_LBUTTONUP:
+		if(_instance->mouseButton)
+			_instance->mouseButton(0,1);
+		break;
+	case WM_RBUTTONDOWN:
+		if(_instance->mouseButton)
+			_instance->mouseButton(2,0);
+		break;
+	case WM_RBUTTONUP:
+		if(_instance->mouseButton)
+			_instance->mouseButton(2,1);
+		break;
+	case WM_MBUTTONDOWN:
+		if(_instance->mouseButton)
+			_instance->mouseButton(1,0);
+		break;
+	case WM_MBUTTONUP:
+		if(_instance->mouseButton)
+			_instance->mouseButton(1,1);
+		break;
+	default:
 		break;
 	}
 
@@ -81,6 +120,7 @@ bool WinWindow::init(DisplayPtr display){
 		NULL,
 		NULL);
 	ShowWindow(_handle, SW_SHOW);
+	_instance->_handle = _handle;
 	return true;
 }
 void WinWindow::start(){
@@ -99,8 +139,8 @@ void WinWindow::start(){
 				break;
 		}
 		else{
-			if (display)
-				display();
+			if (_instance->display)
+				_instance->display();
 			//call engine functions
 		}
 	}

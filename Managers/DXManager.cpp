@@ -1,6 +1,8 @@
 #include<iostream>
 #include"DXManager.h"
 #include"../Core/FalloutEngine.h"
+#include"DXKeyboard.h"
+#include"DXMouse.h"
 
 using namespace std;
 using namespace Fallout::Managers;
@@ -12,7 +14,7 @@ using namespace Fallout::UI;
 #pragma comment (lib, "d3dx10.lib")
 
 DXManager::DXManager(){
-	_window = WinWindow::getInstance();
+	_window = NULL;
 	_swapChain = NULL;
 	_device = NULL;
 	_deviceContext = NULL;
@@ -30,6 +32,7 @@ DXManager::~DXManager(){
 }
 
 bool DXManager::init(DisplayPtr display){
+	_window = WinWindow::getInstance();
 	//init window for DX
 	_window->init(display);
 	//init the DX itself
@@ -77,7 +80,9 @@ void DXManager::start(){
 	//assigning functions
 	_window->display = &DXManager::display;
 	_window->reshape = &DXManager::reshape;
-
+	_window->keyboardKeyDown = &Fallout::Input::DXKeyboard::keyboardDown;
+	_window->keyboardKeyUp = &Fallout::Input::DXKeyboard::keyboardUp;
+	_window->mouseButton = &Fallout::Input::DXMouse::mouseButton;
 	_window->start();
 	return;
 }

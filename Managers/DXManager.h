@@ -8,6 +8,7 @@
 namespace Fallout{
 	namespace Managers{
 		class DXManager : public IGXManager{
+			friend class UI::WinWindow;
 		private:
 			//windows window
 			UI::WinWindow* _window;

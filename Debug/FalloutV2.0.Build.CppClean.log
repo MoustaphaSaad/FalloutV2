@@ -3,6 +3,7 @@ d:\falloutv2\debug\vc120.idb
 d:\falloutv2\debug\falloutengine.obj
 d:\falloutv2\debug\irenderer.obj
 d:\falloutv2\debug\time.obj
+d:\falloutv2\debug\timestep.obj
 d:\falloutv2\debug\dxmanager.obj
 d:\falloutv2\debug\glkeyboard.obj
 d:\falloutv2\debug\glmanager.obj
@@ -13,6 +14,8 @@ d:\falloutv2\debug\source.obj
 d:\falloutv2\debug\application.obj
 d:\falloutv2\debug\display.obj
 d:\falloutv2\debug\winwindow.obj
+d:\falloutv2\debug\falloutv2.0.ilk
+d:\falloutv2\debug\falloutv2.0.exe
 d:\falloutv2\debug\falloutv2.0.pdb
 d:\falloutv2\debug\falloutv2.0.tlog\cl.command.1.tlog
 d:\falloutv2\debug\falloutv2.0.tlog\cl.read.1.tlog

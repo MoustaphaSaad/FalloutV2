@@ -15,6 +15,9 @@ namespace Fallout{
 			//function pointers to handle the window
 			void(*display)(void);
 			void(*reshape)(int, int);
+			void(*keyboardKeyDown)(unsigned int);
+			void(*keyboardKeyUp)(unsigned int);
+			void(*mouseButton)(int,int);
 
 			static WinWindow* getInstance();
 			//init the window
