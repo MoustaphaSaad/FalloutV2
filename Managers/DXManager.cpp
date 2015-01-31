@@ -83,6 +83,7 @@ void DXManager::start(){
 	_window->keyboardKeyDown = &Fallout::Input::DXKeyboard::keyboardDown;
 	_window->keyboardKeyUp = &Fallout::Input::DXKeyboard::keyboardUp;
 	_window->mouseButton = &Fallout::Input::DXMouse::mouseButton;
+	_window->mouseMove = &Fallout::Input::DXMouse::mouseMove;
 	_window->start();
 	return;
 }
@@ -108,4 +109,8 @@ void DXManager::swapBuffers(){
 	DXManager* instance = (DXManager*)Core::FalloutEngine::getInstance()->getGraphicsDevice().get();
 	instance->_swapChain->Present(0, 0);
 	instance = NULL;
+}
+
+WinWindow* DXManager::getWindow() const{
+	return _window;
 }

@@ -24,6 +24,8 @@ namespace Fallout{
 			 */
 
 			static void mouseButton(int button, int state, int x, int y);
+
+			static void mouseMove(int x, int y);
 		protected:
 
 			/**
@@ -36,6 +38,19 @@ namespace Fallout{
 			 */
 
 			void update();
+
+			/**
+			 * @fn	void GLMouse::setMousePosition(glm::uvec2 val);
+			 *
+			 * @brief	Sets mouse position.
+			 *
+			 * @author	Moustapha Saad
+			 * @date	29/01/2015
+			 *
+			 * @param	val	The value.
+			 */
+
+			void setMousePosition(glm::uvec2 val);
 		};
 	}
 }

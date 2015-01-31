@@ -19,6 +19,10 @@ void FirstSample::setupScene(){
 }
 
 void FirstSample::input(){
+	glm::uvec2 pos = IMouse::getPosition();
+	if(pos.x>100 && pos.y >100){
+		IMouse::setPosition(glm::uvec2(50,50));
+	}
 	if(IMouse::getButton(IMouse::Right_Button)== IMouse::State_Down)
 		cout<<"Left"<<endl;
 	if(IMouse::getButton(IMouse::Right_Button)== IMouse::State_Up)

@@ -1,4 +1,6 @@
 #include "DXMouse.h"
+#include<windows.h>
+#include <../Core/FalloutEngine.h>
 using namespace Fallout::Input;
 using namespace std;
 
@@ -13,4 +15,19 @@ void DXMouse::mouseButton(int button, int state){
 
 void DXMouse::update(){
 	_data.clear();
+}
+void DXMouse::setMousePosition(glm::uvec2 val){
+	Managers::DXManager* koko = (Managers::DXManager*)Core::FalloutEngine::getInstance()->getGraphicsDevice().get();
+	HWND hnd = koko->getWindow()->getHandle();
+	POINT pt;
+	pt.x = val.x;
+	pt.y = val.y;
+	if(hnd){
+		ClientToScreen(hnd,&pt);
+		SetCursorPos(pt.x,pt.y);
+	}
+}
+void DXMouse::mouseMove(int x, int y){
+	_position.x = x;
+	_position.y = y;
 }

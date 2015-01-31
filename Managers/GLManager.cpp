@@ -52,6 +52,8 @@ void GLManager::start(){
 	glutSpecialFunc(&GLKeyboard::keyboardSpecialDownFunc);
 	glutSpecialUpFunc(&GLKeyboard::keyboardSpecialUpFunc);
 	glutMouseFunc(&GLMouse::mouseButton);
+	glutMotionFunc(&GLMouse::mouseMove);
+	glutPassiveMotionFunc(&GLMouse::mouseMove);
 
 	//start loop
 	glutMainLoop();

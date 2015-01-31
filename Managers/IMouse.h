@@ -1,6 +1,7 @@
 #pragma once
 #include<map>
 #include<memory>
+#include<glm/glm.hpp>
 namespace Fallout{
 	namespace Core{
 		class FalloutEngine;
@@ -64,6 +65,32 @@ namespace Fallout{
 			 */
 
 			static ButtonState getButton(Buttons b);
+
+			/**
+			 * @fn	static glm::uvec2 IMouse::getPosition();
+			 *
+			 * @brief	Gets the position.
+			 *
+			 * @author	Moustapha Saad
+			 * @date	29/01/2015
+			 *
+			 * @return	The position.
+			 */
+
+			static glm::uvec2 getPosition();
+
+			/**
+			 * @fn	static void IMouse::setPosition(glm::uvec2 val);
+			 *
+			 * @brief	Sets the position.
+			 *
+			 * @author	Moustapha Saad
+			 * @date	29/01/2015
+			 *
+			 * @param	val	The value.
+			 */
+
+			static void setPosition(glm::uvec2 val);
 		protected:
 
 			/**
@@ -77,8 +104,24 @@ namespace Fallout{
 
 			virtual void update();
 
+			/**
+			 * @fn	virtual void IMouse::setMousePosition(glm::uvec2 val);
+			 *
+			 * @brief	Sets mouse position based on API being used.
+			 *
+			 * @author	Moustapha Saad
+			 * @date	29/01/2015
+			 *
+			 * @param	val	The value.
+			 */
+
+			virtual void setMousePosition(glm::uvec2 val);
+
 			/** @brief	The data map. */
 			static std::map<Buttons,ButtonState> _data;
+
+			/** @brief	The position. */
+			static glm::uvec2 _position;
 		};
 		typedef std::shared_ptr<IMouse> IMousePtr;
 	}

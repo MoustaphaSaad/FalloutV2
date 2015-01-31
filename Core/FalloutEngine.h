@@ -18,6 +18,7 @@ namespace Fallout{
 		class FalloutEngine{
 			friend class Fallout::Managers::GLManager;
 			friend class Fallout::Managers::DXManager;
+			friend class Fallout::Input::IMouse;
 		public: 
 			~FalloutEngine();
 			//init function takes display, Graphics handle, and you can pass a custom renderer or it will be the defualt one

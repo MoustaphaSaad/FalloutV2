@@ -37,6 +37,19 @@ namespace Fallout{
 			void clearBuffers();
 			//swap chain
 			void swapBuffers();
+
+			/**
+			 * @fn	WinWindow* DXManager::getWindow();
+			 *
+			 * @brief	Gets the window.
+			 *
+			 * @author	Moustapha Saad
+			 * @date	29/01/2015
+			 *
+			 * @return	null if it fails, else the window.
+			 */
+
+			UI::WinWindow* getWindow() const;
 		};
 	}
 }

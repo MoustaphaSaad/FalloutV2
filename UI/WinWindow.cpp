@@ -1,6 +1,7 @@
 #include"WinWindow.h"
 #include"../Managers/DXManager.h"
 #include<iostream>
+#include <windowsx.h>
 using namespace std;
 using namespace Fallout::UI;
 WinWindow* WinWindow::_instance = NULL;
@@ -63,6 +64,10 @@ LRESULT CALLBACK WinWindow::WindowProc(HWND hWnd, UINT message, WPARAM wParam, L
 	case WM_MBUTTONUP:
 		if(_instance->mouseButton)
 			_instance->mouseButton(1,1);
+		break;
+	case WM_MOUSEMOVE:
+		if(_instance->mouseMove)
+			_instance->mouseMove(GET_X_LPARAM(lParam),GET_Y_LPARAM(lParam));
 		break;
 	default:
 		break;

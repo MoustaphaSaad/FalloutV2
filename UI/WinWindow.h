@@ -18,6 +18,7 @@ namespace Fallout{
 			void(*keyboardKeyDown)(unsigned int);
 			void(*keyboardKeyUp)(unsigned int);
 			void(*mouseButton)(int,int);
+			void(*mouseMove)(int,int);
 
 			static WinWindow* getInstance();
 			//init the window

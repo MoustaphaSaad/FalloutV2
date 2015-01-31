@@ -15,3 +15,12 @@ void GLMouse::mouseButton(int button, int state, int x, int y){
 void GLMouse::update(){
 	_data.clear();
 }
+
+void GLMouse::setMousePosition(glm::uvec2 val){
+	glutWarpPointer(val.x,val.y);
+}
+
+void GLMouse::mouseMove(int x, int y){
+	_position.x = x;
+	_position.y = y;
+}
