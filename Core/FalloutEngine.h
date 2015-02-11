@@ -82,6 +82,9 @@ namespace Fallout{
 			
 			/** @brief	The renderer to be used in the engine. */
 			IRendererPtr _renderer;
+
+			/** @brief	true to cleaning up for closing the engine. */
+			bool _cleaningUp;
 		};
 		typedef std::shared_ptr<FalloutEngine> FalloutEnginePtr;
 	}

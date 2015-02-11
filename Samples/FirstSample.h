@@ -12,6 +12,7 @@ namespace Fallout{
 			void init();
 			void loadResources();
 			void setupScene();
+			void cleanUp();
 
 			void input();
 			void update(TimeStep time);

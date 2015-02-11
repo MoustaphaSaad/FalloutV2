@@ -1,28 +1,35 @@
 #include"FirstSample.h"
 #include<iostream>
 #include"../Managers/FalloutInput.h"
+#include"../Objects/FalloutObjects.h"
 using namespace std;
 using namespace Fallout::Samples;
 using namespace Fallout::Input;
 FirstSample::FirstSample():Application(){
+	
 }
 FirstSample::~FirstSample(){
-	cerr << "destructor" << endl;
+	
+}
+
+void FirstSample::cleanUp(){
+	
 }
 
 void FirstSample::init(){
+	
 	Time::setFrameLimit(10);
+	Time::setTimeType(UNLIMITED);
 }
 void FirstSample::loadResources(){
+	
 }
 void FirstSample::setupScene(){
+	
 }
 
 void FirstSample::input(){
-	glm::uvec2 pos = IMouse::getPosition();
-	if(pos.x>100 && pos.y >100){
-		IMouse::setPosition(glm::uvec2(50,50));
-	}
+	Fallout::Objects::Component x;
 	if(IMouse::getButton(IMouse::Right_Button)== IMouse::State_Down)
 		cout<<"Left"<<endl;
 	if(IMouse::getButton(IMouse::Right_Button)== IMouse::State_Up)

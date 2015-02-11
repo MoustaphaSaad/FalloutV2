@@ -118,6 +118,10 @@
     <ClInclude Include="Managers\IGXManager.h" />
     <ClInclude Include="Managers\IKeyboard.h" />
     <ClInclude Include="Managers\IMouse.h" />
+    <ClInclude Include="Objects\Component.h" />
+    <ClInclude Include="Objects\FalloutObjects.h" />
+    <ClInclude Include="Objects\IRenderable.h" />
+    <ClInclude Include="Objects\IUpdatable.h" />
     <ClInclude Include="Samples\FirstSample.h" />
     <ClInclude Include="UI\Application.h" />
     <ClInclude Include="UI\Display.h" />

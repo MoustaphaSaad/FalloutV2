@@ -15,6 +15,17 @@ namespace Fallout{
 			//load Resources function called once
 			virtual void loadResources();
 
+			/**
+			 * @fn	virtual void Application::cleanUp();
+			 *
+			 * @brief	Clean up resources used in this application.
+			 *
+			 * @author	Moustapha Saad
+			 * @date	05/02/2015
+			 */
+
+			virtual void cleanUp();
+
 			//functions that will be called every frame
 			//input function
 			virtual void input();

@@ -2,10 +2,7 @@
 using namespace Fallout::UI;
 
 Application::Application(){
-	//calling the initialization functions to init the scene
-	init();
-	loadResources();
-	setupScene();
+
 }
 
 Application::~Application(){
@@ -22,6 +19,9 @@ void Application::setupScene(){
 
 }
 
+void Application::cleanUp(){
+
+}
 
 void Application::input(){
 

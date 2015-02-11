@@ -8,7 +8,7 @@ IKeyboard::IKeyboard(){
 	_data.clear();
 }
 IKeyboard::~IKeyboard(){
-	_data.clear();
+	//_data.clear();
 }
 IKeyboard::KeyState IKeyboard::getKey(IKeyboard::Keys key){
 	map<IKeyboard::Keys, IKeyboard::KeyState>::iterator it;

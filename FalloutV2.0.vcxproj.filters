@@ -31,6 +31,9 @@
     <Filter Include="Source Files\Samples">
       <UniqueIdentifier>{fdd8db35-6851-479c-ae30-67c8e3de7e73}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Kurt Godel">
+      <UniqueIdentifier>{ac5ceec6-aa69-4af5-a82c-f1a593684acb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -151,6 +154,18 @@
     </ClInclude>
     <ClInclude Include="Managers\DXMouse.h">
       <Filter>Header Files\Managers\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\IUpdatable.h">
+      <Filter>Header Files\Kurt Godel</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\IRenderable.h">
+      <Filter>Header Files\Kurt Godel</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Component.h">
+      <Filter>Header Files\Kurt Godel</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\FalloutObjects.h">
+      <Filter>Header Files\Kurt Godel</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

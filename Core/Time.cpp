@@ -37,3 +37,6 @@ void Time::setFrameLimit(int limit){
 int Time::getFrameLimit(){
 	return _frameLimit;
 }
+void Time::setTimeType(TimeType val){
+	_type = val;
+}

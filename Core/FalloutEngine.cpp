@@ -21,24 +21,27 @@ FalloutEngine::FalloutEngine(){
 	_application = nullptr;
 	_renderer = nullptr;
 	_mouse = nullptr;
+	_cleaningUp = false;
 }
 FalloutEngine::~FalloutEngine(){
-
+	_cleaningUp = true;
 	if (_mainThread && !_joinable)
 		_mainThread->detach();
 	if (_display)
 		_display = nullptr;
 	if (_graphicsDevice)
 		_graphicsDevice = nullptr;
-	if (_application)
+	if (_application){
+		_application->cleanUp();
 		_application = nullptr;
+	}
 	if(_keyboard)
 		_keyboard = nullptr;
 	if(_mouse)
 		_mouse = nullptr;
 	if(_renderer)
 		_renderer = nullptr;
-	_instance = nullptr;
+	//_instance = nullptr;
 }
 FalloutEnginePtr FalloutEngine::getInstance(){
 	if (_instance == nullptr)
@@ -73,6 +76,7 @@ bool FalloutEngine::init(){
 		cerr << "Cannot init Engine ... exit" << endl;
 		exit(1);
 	}
+	_application->init();
 }
 void FalloutEngine::start(){
 	//init thread
@@ -99,8 +103,13 @@ DisplayPtr FalloutEngine::getDisplay(){
 void FalloutEngine::setApplication(ApplicationPtr app){
 	_application = app;
 	_renderer->setApplication(_application);
+	_application->init();
+	_application->loadResources();
+	_application->setupScene();
 }
 void FalloutEngine::gameLoop(){
+	if(_cleaningUp)
+		return;
 	//calculate delta
 	double current = Time::getTime();
 	double delta = current - Time::_lastTime;

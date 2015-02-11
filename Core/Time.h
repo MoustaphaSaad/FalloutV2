@@ -27,6 +27,7 @@ namespace Fallout{
 			static double getTime();
 			static void setFrameLimit(int limit);
 			static int getFrameLimit();
+			static void setTimeType(TimeType val);
 		};
 	}
 }
