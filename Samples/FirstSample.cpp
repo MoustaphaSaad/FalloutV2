@@ -5,6 +5,7 @@
 using namespace std;
 using namespace Fallout::Samples;
 using namespace Fallout::Input;
+Fallout::Objects::GameObject koko;
 FirstSample::FirstSample():Application(){
 	
 }
@@ -17,9 +18,8 @@ void FirstSample::cleanUp(){
 }
 
 void FirstSample::init(){
-	
 	Time::setFrameLimit(10);
-	Time::setTimeType(UNLIMITED);
+	//Time::setTimeType(UNLIMITED);
 }
 void FirstSample::loadResources(){
 	
@@ -29,6 +29,7 @@ void FirstSample::setupScene(){
 }
 
 void FirstSample::input(){
+	koko.input();
 	Fallout::Objects::Component x;
 	if(IMouse::getButton(IMouse::Right_Button)== IMouse::State_Down)
 		cout<<"Left"<<endl;
@@ -60,7 +61,8 @@ void FirstSample::input(){
 	}
 }
 void FirstSample::update(TimeStep time){
-
+	koko.update(time);
 }
 void FirstSample::render(){
+	koko.render();
 }
