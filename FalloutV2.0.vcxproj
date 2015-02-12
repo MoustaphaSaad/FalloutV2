@@ -95,6 +95,8 @@
     <ClCompile Include="Managers\IGXManager.cpp" />
     <ClCompile Include="Managers\IKeyboard.cpp" />
     <ClCompile Include="Managers\IMouse.cpp" />
+    <ClCompile Include="Objects\GameObject.cpp" />
+    <ClCompile Include="Objects\Transform.cpp" />
     <ClCompile Include="Samples\FirstSample.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="UI\Application.cpp" />
@@ -120,8 +122,11 @@
     <ClInclude Include="Managers\IMouse.h" />
     <ClInclude Include="Objects\Component.h" />
     <ClInclude Include="Objects\FalloutObjects.h" />
+    <ClInclude Include="Objects\GameObject.h" />
     <ClInclude Include="Objects\IRenderable.h" />
+    <ClInclude Include="Objects\ITransformable.h" />
     <ClInclude Include="Objects\IUpdatable.h" />
+    <ClInclude Include="Objects\Transform.h" />
     <ClInclude Include="Samples\FirstSample.h" />
     <ClInclude Include="UI\Application.h" />
     <ClInclude Include="UI\Display.h" />

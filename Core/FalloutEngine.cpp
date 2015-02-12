@@ -76,7 +76,7 @@ bool FalloutEngine::init(){
 		cerr << "Cannot init Engine ... exit" << endl;
 		exit(1);
 	}
-	_application->init();
+	//_application->init();
 }
 void FalloutEngine::start(){
 	//init thread
@@ -112,6 +112,8 @@ void FalloutEngine::gameLoop(){
 		return;
 	//calculate delta
 	double current = Time::getTime();
+	if(Time::_lastTime == 0)
+		Time::_lastTime = current;
 	double delta = current - Time::_lastTime;
 	Time::_lastTime = current;
 	Time::_totalElapsedTime += delta;

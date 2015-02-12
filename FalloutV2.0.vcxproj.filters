@@ -90,6 +90,12 @@
     <ClCompile Include="Managers\DXMouse.cpp">
       <Filter>Header Files\Managers\Input</Filter>
     </ClCompile>
+    <ClCompile Include="Objects\Transform.cpp">
+      <Filter>Header Files\Kurt Godel</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\GameObject.cpp">
+      <Filter>Header Files\Kurt Godel</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Core\FalloutEngine.h">
@@ -165,6 +171,15 @@
       <Filter>Header Files\Kurt Godel</Filter>
     </ClInclude>
     <ClInclude Include="Objects\FalloutObjects.h">
+      <Filter>Header Files\Kurt Godel</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\ITransformable.h">
+      <Filter>Header Files\Kurt Godel</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\Transform.h">
+      <Filter>Header Files\Kurt Godel</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\GameObject.h">
       <Filter>Header Files\Kurt Godel</Filter>
     </ClInclude>
   </ItemGroup>
