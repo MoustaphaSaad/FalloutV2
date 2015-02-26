@@ -1,12 +1,13 @@
 #include "GLMouse.h"
-#include<GL/freeglut.h>
+#include "GLManager.h"
+#include<GLFW/glfw3.h>
 using namespace Fallout::Input;
 using namespace std;
 
 void GLMouse::mouseButton(int button, int state, int x, int y){
-	if(state == GLUT_DOWN)
+	if(state == GLFW_PRESS)
 		_data.insert(make_pair((Buttons)button,ButtonState::State_Down));
-	else if(state == GLUT_UP)
+	else if(state == GLFW_RELEASE)
 		_data.insert(make_pair((Buttons)button,ButtonState::State_Up));
 	else
 		_data.insert(make_pair((Buttons)button,ButtonState::State_None));
@@ -17,7 +18,7 @@ void GLMouse::update(){
 }
 
 void GLMouse::setMousePosition(glm::uvec2 val){
-	glutWarpPointer(val.x,val.y);
+	glfwSetCursorPos(Managers::GLManager::getGLFWWindow(),val.x,val.y);
 }
 
 void GLMouse::mouseMove(int x, int y){

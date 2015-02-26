@@ -34,6 +34,9 @@
     <Filter Include="Header Files\Kurt Godel">
       <UniqueIdentifier>{ac5ceec6-aa69-4af5-a82c-f1a593684acb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Graphics">
+      <UniqueIdentifier>{ee4b8134-fce6-4e33-b69d-99a6017d0abf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -95,6 +98,9 @@
     </ClCompile>
     <ClCompile Include="Objects\GameObject.cpp">
       <Filter>Header Files\Kurt Godel</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\Resource.cpp">
+      <Filter>Header Files\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +187,12 @@
     </ClInclude>
     <ClInclude Include="Objects\GameObject.h">
       <Filter>Header Files\Kurt Godel</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\Resource.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\FalloutGraphics.h">
+      <Filter>Header Files\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

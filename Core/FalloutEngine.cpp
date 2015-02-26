@@ -4,6 +4,7 @@
 #include"../Managers/DXKeyboard.h"
 #include"../Managers/GLMouse.h"
 #include"../Managers/DXMouse.h"
+#include"Time.h"
 using namespace std;
 using namespace Fallout::Core;
 using namespace Fallout::UI;
@@ -70,15 +71,21 @@ void FalloutEngine::setup(DisplayPtr display, GraphicsHandle type, IRendererPtr 
 	}
 }
 bool FalloutEngine::init(){
-	if (_graphicsDevice->init(_display))
+	try{
+		_graphicsDevice->init(_display);
 		_graphicsDevice->start();
-	else{
-		cerr << "Cannot init Engine ... exit" << endl;
-		exit(1);
+		return true;
+	}catch(exception e){
+		cerr<<e.what()<<endl;
+		return false;
 	}
-	//_application->init();
 }
 void FalloutEngine::start(){
+	if(_application){
+		_application->init();
+		_application->loadResources();
+		_application->setupScene();
+	}
 	//init thread
 	if (_graphicsDevice != nullptr)
 		_mainThread = new thread(&FalloutEngine::init, this);
@@ -103,9 +110,6 @@ DisplayPtr FalloutEngine::getDisplay(){
 void FalloutEngine::setApplication(ApplicationPtr app){
 	_application = app;
 	_renderer->setApplication(_application);
-	_application->init();
-	_application->loadResources();
-	_application->setupScene();
 }
 void FalloutEngine::gameLoop(){
 	if(_cleaningUp)
@@ -127,10 +131,12 @@ void FalloutEngine::gameLoop(){
 	if (Time::_secondTick >= 1){
 		//reset second tick
 		Time::_secondTick = 0;
+		//setting the FPS
+		Time::FPS = Time::_frameCounter;
 		//reset frame counter
 		Time::_frameCounter = 0;
 	}
-	if (Time::_type == TimeType::LIMITED){
+	if (Time::_type == Time::Type::LIMITED){
 		//check if counter reached the frame limit in milliseconds
 		if (Time::_counter > 1.0/Time::_frameLimit ){
 			//set counter to 0 and 
@@ -138,7 +144,7 @@ void FalloutEngine::gameLoop(){
 			needRender = true;
 		}
 	}
-	else if (Time::_type == TimeType::UNLIMITED){
+	else if (Time::_type == Time::Type::UNLIMITED){
 		//doesn't matter we always render as much as possible
 		needRender = true;
 	}

@@ -1,5 +1,5 @@
 #include"GLKeyboard.h"
-#include<GL\freeglut.h>
+#include<GLFW/glfw3.h>
 #include<utility>
 using namespace std;
 using namespace Fallout::Input;
@@ -347,85 +347,85 @@ void GLKeyboard::keyboardUpFunc(unsigned char key, int x, int y){
 
 void GLKeyboard::keyboardSpecialUpFunc(int key, int x, int y){
 	switch (key){
-	case GLUT_KEY_SHIFT_L:
+	case GLFW_KEY_LEFT_SHIFT:
 		_data.insert(make_pair(Keys::Left_Shift, KeyState::State_Up));
 		break;
-	case GLUT_KEY_SHIFT_R:
+	case GLFW_KEY_RIGHT_SHIFT:
 		_data.insert(make_pair(Keys::Right_Shift, KeyState::State_Up));
 		break;
-	case GLUT_KEY_ALT_L:
+	case GLFW_KEY_LEFT_ALT:
 		_data.insert(make_pair(Keys::Left_Alt, KeyState::State_Up));
 		break;
-	case GLUT_KEY_ALT_R:
+	case GLFW_KEY_RIGHT_ALT:
 		_data.insert(make_pair(Keys::Right_Alt, KeyState::State_Up));
 		break;
-	case GLUT_KEY_CTRL_L:
+	case GLFW_KEY_LEFT_CONTROL:
 		_data.insert(make_pair(Keys::Left_Ctrl, KeyState::State_Up));
 		break;
-	case GLUT_KEY_CTRL_R:
+	case GLFW_KEY_RIGHT_CONTROL:
 		_data.insert(make_pair(Keys::Right_Ctrl, KeyState::State_Up));
 		break;
-	case GLUT_KEY_END:
+	case GLFW_KEY_END:
 		_data.insert(make_pair(Keys::End, KeyState::State_Up));
 		break;
-	case GLUT_KEY_HOME:
+	case GLFW_KEY_HOME:
 		_data.insert(make_pair(Keys::Home, KeyState::State_Up));
 		break;
-	case GLUT_KEY_INSERT:
+	case GLFW_KEY_INSERT:
 		_data.insert(make_pair(Keys::Insert, KeyState::State_Up));
 		break;
-	case GLUT_KEY_PAGE_UP:
+	case GLFW_KEY_PAGE_UP:
 		_data.insert(make_pair(Keys::PageUp, KeyState::State_Up));
 		break;
-	case GLUT_KEY_PAGE_DOWN:
+	case GLFW_KEY_PAGE_DOWN:
 		_data.insert(make_pair(Keys::PageDown, KeyState::State_Up));
 		break;
-	case GLUT_KEY_UP:
+	case GLFW_KEY_UP:
 		_data.insert(make_pair(Keys::Up, KeyState::State_Up));
 		break;
-	case GLUT_KEY_DOWN:
+	case GLFW_KEY_DOWN:
 		_data.insert(make_pair(Keys::Down, KeyState::State_Up));
 		break;
-	case GLUT_KEY_RIGHT:
+	case GLFW_KEY_RIGHT:
 		_data.insert(make_pair(Keys::Right, KeyState::State_Up));
 		break;
-	case GLUT_KEY_LEFT:
+	case GLFW_KEY_LEFT:
 		_data.insert(make_pair(Keys::Left, KeyState::State_Up));
 		break;
-	case GLUT_KEY_F1:
+	case GLFW_KEY_F1:
 		_data.insert(make_pair(Keys::F1, KeyState::State_Up));
 		break;
-	case GLUT_KEY_F2:
+	case GLFW_KEY_F2:
 		_data.insert(make_pair(Keys::F2, KeyState::State_Up));
 		break;
-	case GLUT_KEY_F3:
+	case GLFW_KEY_F3:
 		_data.insert(make_pair(Keys::F3, KeyState::State_Up));
 		break;
-	case GLUT_KEY_F4:
+	case GLFW_KEY_F4:
 		_data.insert(make_pair(Keys::F4, KeyState::State_Up));
 		break;
-	case GLUT_KEY_F5:
+	case GLFW_KEY_F5:
 		_data.insert(make_pair(Keys::F5, KeyState::State_Up));
 		break;
-	case GLUT_KEY_F6:
+	case GLFW_KEY_F6:
 		_data.insert(make_pair(Keys::F6, KeyState::State_Up));
 		break;
-	case GLUT_KEY_F7:
+	case GLFW_KEY_F7:
 		_data.insert(make_pair(Keys::F7, KeyState::State_Up));
 		break;
-	case GLUT_KEY_F8:
+	case GLFW_KEY_F8:
 		_data.insert(make_pair(Keys::F8, KeyState::State_Up));
 		break;
-	case GLUT_KEY_F9:
+	case GLFW_KEY_F9:
 		_data.insert(make_pair(Keys::F9, KeyState::State_Up));
 		break;
-	case GLUT_KEY_F10:
+	case GLFW_KEY_F10:
 		_data.insert(make_pair(Keys::F10, KeyState::State_Up));
 		break;
-	case GLUT_KEY_F11:
+	case GLFW_KEY_F11:
 		_data.insert(make_pair(Keys::F11, KeyState::State_Up));
 		break;
-	case GLUT_KEY_F12:
+	case GLFW_KEY_F12:
 		_data.insert(make_pair(Keys::F12, KeyState::State_Up));
 		break;
 	default:
@@ -434,85 +434,85 @@ void GLKeyboard::keyboardSpecialUpFunc(int key, int x, int y){
 }
 void GLKeyboard::keyboardSpecialDownFunc(int key, int x, int y){
 	switch (key){
-	case GLUT_KEY_SHIFT_L:
+	case GLFW_KEY_LEFT_SHIFT:
 		_data.insert(make_pair(Keys::Left_Shift, KeyState::State_Down));
 		break;
-	case GLUT_KEY_SHIFT_R:
+	case GLFW_KEY_RIGHT_SHIFT:
 		_data.insert(make_pair(Keys::Right_Shift, KeyState::State_Down));
 		break;
-	case GLUT_KEY_ALT_L:
+	case GLFW_KEY_LEFT_ALT:
 		_data.insert(make_pair(Keys::Left_Alt, KeyState::State_Down));
 		break;
-	case GLUT_KEY_ALT_R:
+	case GLFW_KEY_RIGHT_ALT:
 		_data.insert(make_pair(Keys::Right_Alt, KeyState::State_Down));
 		break;
-	case GLUT_KEY_CTRL_L:
+	case GLFW_KEY_LEFT_CONTROL:
 		_data.insert(make_pair(Keys::Left_Ctrl, KeyState::State_Down));
 		break;
-	case GLUT_KEY_CTRL_R:
+	case GLFW_KEY_RIGHT_CONTROL:
 		_data.insert(make_pair(Keys::Right_Ctrl, KeyState::State_Down));
 		break;
-	case GLUT_KEY_END:
+	case GLFW_KEY_END:
 		_data.insert(make_pair(Keys::End, KeyState::State_Down));
 		break;
-	case GLUT_KEY_HOME:
+	case GLFW_KEY_HOME:
 		_data.insert(make_pair(Keys::Home, KeyState::State_Down));
 		break;
-	case GLUT_KEY_INSERT:
+	case GLFW_KEY_INSERT:
 		_data.insert(make_pair(Keys::Insert, KeyState::State_Down));
 		break;
-	case GLUT_KEY_PAGE_UP:
+	case GLFW_KEY_PAGE_UP:
 		_data.insert(make_pair(Keys::PageUp, KeyState::State_Down));
 		break;
-	case GLUT_KEY_PAGE_DOWN:
+	case GLFW_KEY_PAGE_DOWN:
 		_data.insert(make_pair(Keys::PageDown, KeyState::State_Down));
 		break;
-	case GLUT_KEY_UP:
+	case GLFW_KEY_UP:
 		_data.insert(make_pair(Keys::Up, KeyState::State_Down));
 		break;
-	case GLUT_KEY_DOWN:
+	case GLFW_KEY_DOWN:
 		_data.insert(make_pair(Keys::Down, KeyState::State_Down));
 		break;
-	case GLUT_KEY_RIGHT:
+	case GLFW_KEY_RIGHT:
 		_data.insert(make_pair(Keys::Right, KeyState::State_Down));
 		break;
-	case GLUT_KEY_LEFT:
+	case GLFW_KEY_LEFT:
 		_data.insert(make_pair(Keys::Left, KeyState::State_Down));
 		break;
-	case GLUT_KEY_F1:
+	case GLFW_KEY_F1:
 		_data.insert(make_pair(Keys::F1, KeyState::State_Down));
 		break;
-	case GLUT_KEY_F2:
+	case GLFW_KEY_F2:
 		_data.insert(make_pair(Keys::F2, KeyState::State_Down));
 		break;
-	case GLUT_KEY_F3:
+	case GLFW_KEY_F3:
 		_data.insert(make_pair(Keys::F3, KeyState::State_Down));
 		break;
-	case GLUT_KEY_F4:
+	case GLFW_KEY_F4:
 		_data.insert(make_pair(Keys::F4, KeyState::State_Down));
 		break;
-	case GLUT_KEY_F5:
+	case GLFW_KEY_F5:
 		_data.insert(make_pair(Keys::F5, KeyState::State_Down));
 		break;
-	case GLUT_KEY_F6:
+	case GLFW_KEY_F6:
 		_data.insert(make_pair(Keys::F6, KeyState::State_Down));
 		break;
-	case GLUT_KEY_F7:
+	case GLFW_KEY_F7:
 		_data.insert(make_pair(Keys::F7, KeyState::State_Down));
 		break;
-	case GLUT_KEY_F8:
+	case GLFW_KEY_F8:
 		_data.insert(make_pair(Keys::F8, KeyState::State_Down));
 		break;
-	case GLUT_KEY_F9:
+	case GLFW_KEY_F9:
 		_data.insert(make_pair(Keys::F9, KeyState::State_Down));
 		break;
-	case GLUT_KEY_F10:
+	case GLFW_KEY_F10:
 		_data.insert(make_pair(Keys::F10, KeyState::State_Down));
 		break;
-	case GLUT_KEY_F11:
+	case GLFW_KEY_F11:
 		_data.insert(make_pair(Keys::F11, KeyState::State_Down));
 		break;
-	case GLUT_KEY_F12:
+	case GLFW_KEY_F12:
 		_data.insert(make_pair(Keys::F12, KeyState::State_Down));
 		break;
 	default:

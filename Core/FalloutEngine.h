@@ -21,7 +21,7 @@ namespace Fallout{
 			friend class Fallout::Input::IMouse;
 		public: 
 			~FalloutEngine();
-			//init function takes display, Graphics handle, and you can pass a custom renderer or it will be the defualt one
+			//init function takes display, Graphics handle, and you can pass a custom renderer or it will be the default one
 			void setup(UI::DisplayPtr display,GraphicsHandle type, IRendererPtr renderer = IRendererPtr(new IRenderer()));
 			//will take an application
 			void start();

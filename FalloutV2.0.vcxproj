@@ -41,13 +41,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(ProjectDir)\Libraries\glm\include;$(ProjectDir)\Libraries\freeglut\include;$(ProjectDir)\Libraries\glew-1.10.0\include;$(ProjectDir)\Managers;$(ProjectDir)\UI;${ProjectDir)\Math;$(ProjectDir)\Core;$(IncludePath)</IncludePath>
-    <LibraryPath>"C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86";$(ProjectDir)\Libraries\glew-1.10.0\lib\Release\Win32;$(ProjectDir)\Libraries\freeglut\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(ProjectDir)\Libraries\glm\include;$(ProjectDir)\Libraries\freeglut\include;$(ProjectDir)\Libraries\glew-1.10.0\include;$(ProjectDir)\Libraries\glfw-3.1.bin.WIN32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(ProjectDir)\Libraries\glew-1.10.0\lib\Release\Win32;$(ProjectDir)\Libraries\freeglut\lib;$(ProjectDir)\Libraries\glfw-3.1.bin.WIN32\lib-vc2012;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(ProjectDir)\Libraries\glm\include;$(ProjectDir)\Libraries\freeglut\include;$(ProjectDir)\Libraries\glew-1.10.0\include;$(ProjectDir)\Managers;$(ProjectDir)\UI;$(ProjectDir)\Core;$(IncludePath)</IncludePath>
-    <LibraryPath>"C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86";$(ProjectDir)\Libraries\glew-1.10.0\lib\Release\Win32;$(ProjectDir)\Libraries\freeglut\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Include;$(ProjectDir)\Libraries\glm\include;$(ProjectDir)\Libraries\freeglut\include;$(ProjectDir)\Libraries\glew-1.10.0\include;$(ProjectDir)\Libraries\glfw-3.1.bin.WIN32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX SDK %28June 2010%29\Lib\x86;$(ProjectDir)\Libraries\glew-1.10.0\lib\Release\Win32;$(ProjectDir)\Libraries\freeglut\lib;$(ProjectDir)\Libraries\glfw-3.1.bin.WIN32\lib-vc2012;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -86,6 +86,7 @@
     <ClCompile Include="Core\IRenderer.cpp" />
     <ClCompile Include="Core\Time.cpp" />
     <ClCompile Include="Core\TimeStep.cpp" />
+    <ClCompile Include="Graphics\Resource.cpp" />
     <ClCompile Include="Managers\DXKeyboard.cpp" />
     <ClCompile Include="Managers\DXManager.cpp" />
     <ClCompile Include="Managers\DXMouse.cpp" />
@@ -109,6 +110,8 @@
     <ClInclude Include="Core\IRenderer.h" />
     <ClInclude Include="Core\Time.h" />
     <ClInclude Include="Core\TimeStep.h" />
+    <ClInclude Include="Graphics\FalloutGraphics.h" />
+    <ClInclude Include="Graphics\Resource.h" />
     <ClInclude Include="Managers\DXKeyboard.h" />
     <ClInclude Include="Managers\DXManager.h" />
     <ClInclude Include="Managers\DXMouse.h" />

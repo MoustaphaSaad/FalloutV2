@@ -2,9 +2,10 @@
 #include"FalloutEngine.h"
 namespace Fallout{
 	namespace Core{
-		enum TimeType{UNLIMITED, LIMITED};
 		class Time{
 			friend class FalloutEngine;
+		public:
+			enum Type{UNLIMITED, LIMITED};
 		private:
 			// to get time from windows api
 			static double _freq;
@@ -22,12 +23,18 @@ namespace Fallout{
 			static double _secondTick;
 			//counter to indicate the elapsed time
 			static double _totalElapsedTime;
+
+			/** @brief	The FPS. */
+			static int FPS;
+			/** @brief	The type of FPS. */
+			static Type _type;
 		public:
-			static TimeType _type;
 			static double getTime();
 			static void setFrameLimit(int limit);
 			static int getFrameLimit();
-			static void setTimeType(TimeType val);
+			static Type getTimeType();
+			static void setTimeType(Type val);
+			static int getFPS();
 		};
 	}
 }

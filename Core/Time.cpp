@@ -7,13 +7,14 @@ using namespace std;
 //init static variables
 double Time::_freq = 0;
 bool Time::_init = false;
-TimeType Time::_type = TimeType::LIMITED;
+Time::Type Time::_type = Time::Type::LIMITED;
 int Time::_frameLimit = 60;
 double Time::_lastTime = 0;
 double Time::_counter = 0;
 double Time::_secondTick = 0;
 int Time::_frameCounter = 0;
 double Time::_totalElapsedTime = 0;
+int Time::FPS = 0;
 
 double Time::getTime(){
 	LARGE_INTEGER li;
@@ -37,6 +38,13 @@ void Time::setFrameLimit(int limit){
 int Time::getFrameLimit(){
 	return _frameLimit;
 }
-void Time::setTimeType(TimeType val){
+void Time::setTimeType(Type val){
 	_type = val;
+}
+Time::Type Time::getTimeType(){
+	return _type;
+
+}
+int Time::getFPS(){
+	return FPS;
 }

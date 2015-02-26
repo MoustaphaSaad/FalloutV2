@@ -1,6 +1,6 @@
 #include "DXMouse.h"
 #include<windows.h>
-#include <../Core/FalloutEngine.h>
+#include "../Core/FalloutEngine.h"
 using namespace Fallout::Input;
 using namespace std;
 
@@ -17,7 +17,7 @@ void DXMouse::update(){
 	_data.clear();
 }
 void DXMouse::setMousePosition(glm::uvec2 val){
-	Managers::DXManager* koko = (Managers::DXManager*)Core::FalloutEngine::getInstance()->getGraphicsDevice().get();
+	auto koko = dynamic_cast<Managers::DXManager*>(Core::FalloutEngine::getInstance()->getGraphicsDevice().get());
 	HWND hnd = koko->getWindow()->getHandle();
 	POINT pt;
 	pt.x = val.x;

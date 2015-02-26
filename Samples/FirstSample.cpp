@@ -2,10 +2,11 @@
 #include<iostream>
 #include"../Managers/FalloutInput.h"
 #include"../Objects/FalloutObjects.h"
+#include"../Graphics/FalloutGraphics.h"
 using namespace std;
 using namespace Fallout::Samples;
 using namespace Fallout::Input;
-Fallout::Objects::GameObject koko;
+using namespace Fallout::Graphics;
 FirstSample::FirstSample():Application(){
 	
 }
@@ -18,22 +19,26 @@ void FirstSample::cleanUp(){
 }
 
 void FirstSample::init(){
-	Time::setFrameLimit(10);
-	//Time::setTimeType(UNLIMITED);
+	//Time::setFrameLimit(10);
+	Time::setTimeType(Time::Type::UNLIMITED);
 }
 void FirstSample::loadResources(){
-	
+	ResourcePtr moka = Graphics::Resource::load<Graphics::Resource>("moka");
+	if(moka == NULL)
+		cout<<"Cannot Load"<<endl;
 }
 void FirstSample::setupScene(){
 	
 }
 
 void FirstSample::input(){
-	koko.input();
-	Fallout::Objects::Component x;
-	if(IMouse::getButton(IMouse::Right_Button)== IMouse::State_Down)
+	//cout<< "FPS = "<<Time::getFPS()<<endl;
+	auto mps = IMouse::getPosition();
+	if(mps.x>100||mps.y>100)
+		IMouse::setPosition(glm::uvec2(100,100));
+	if(IMouse::getButton(IMouse::Left_Button)== IMouse::State_Down)
 		cout<<"Left"<<endl;
-	if(IMouse::getButton(IMouse::Right_Button)== IMouse::State_Up)
+	if(IMouse::getButton(IMouse::Left_Button)== IMouse::State_Up)
 		cout<<"Left UP"<<endl;
 	if (IKeyboard::getKey(IKeyboard::Keys::A) == IKeyboard::KeyState::State_Down){
 		cout << "A" << endl;
@@ -61,8 +66,6 @@ void FirstSample::input(){
 	}
 }
 void FirstSample::update(TimeStep time){
-	koko.update(time);
 }
 void FirstSample::render(){
-	koko.render();
 }

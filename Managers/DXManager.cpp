@@ -106,7 +106,7 @@ void DXManager::clearBuffers(){
 	_deviceContext->ClearRenderTargetView(_backBuffer, D3DXCOLOR(0, 0, 0, 0));
 }
 void DXManager::swapBuffers(){
-	DXManager* instance = (DXManager*)Core::FalloutEngine::getInstance()->getGraphicsDevice().get();
+	auto instance = dynamic_cast<Managers::DXManager*>(Core::FalloutEngine::getInstance()->getGraphicsDevice().get());
 	instance->_swapChain->Present(0, 0);
 	instance = NULL;
 }
